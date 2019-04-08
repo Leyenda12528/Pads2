@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C083918-9414-4C4A-A66E-2B26DA36E610}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>proyectoads2</RootNamespace>
+    <AssemblyName>proyectoads2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\Downloads\Leyenda2\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Conexion.cs" />
+    <Compile Include="Base\Help1.cs" />
+    <Compile Include="Base\Consultas.cs" />
+    <Compile Include="correo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="correo.Designer.cs">
+      <DependentUpon>correo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\Usuari.cs" />
+    <Compile Include="Entregar uniformes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entregar uniformes.Designer.cs">
+      <DependentUpon>Entregar uniformes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ingresar uniforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ingresar uniforme.Designer.cs">
+      <DependentUpon>Ingresar uniforme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ingresaralumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ingresaralumno.Designer.cs">
+      <DependentUpon>ingresaralumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ingreso pedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ingreso pedido.Designer.cs">
+      <DependentUpon>ingreso pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventario.Designer.cs">
+      <DependentUpon>inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="menu semanal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu semanal.Designer.cs">
+      <DependentUpon>menu semanal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menualimentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menualimentos.Designer.cs">
+      <DependentUpon>Menualimentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="planificacionmenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="planificacionmenu.Designer.cs">
+      <DependentUpon>planificacionmenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Uniformes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uniformes.Designer.cs">
+      <DependentUpon>Uniformes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="usuarios.Designer.cs">
+      <DependentUpon>usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vencidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vencidos.Designer.cs">
+      <DependentUpon>vencidos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="correo.resx">
+      <DependentUpon>correo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entregar uniformes.resx">
+      <DependentUpon>Entregar uniformes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ingresar uniforme.resx">
+      <DependentUpon>Ingresar uniforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ingresaralumno.resx">
+      <DependentUpon>ingresaralumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ingreso pedido.resx">
+      <DependentUpon>ingreso pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventario.resx">
+      <DependentUpon>inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu semanal.resx">
+      <DependentUpon>menu semanal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menualimentos.resx">
+      <DependentUpon>Menualimentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="planificacionmenu.resx">
+      <DependentUpon>planificacionmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Uniformes.resx">
+      <DependentUpon>Uniformes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usuarios.resx">
+      <DependentUpon>usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vencidos.resx">
+      <DependentUpon>vencidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sin título.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo inrit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\escudo-de-el-salvador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\56492542_1048747145333366_2243577017192677376_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cerrar-ventana-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-menú-filled-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-comida-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-camiseta-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-usuario-de-género-neutro-filled-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-niño-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pequeña-persona-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reporte-de-negocios-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-casa-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-nuevo-post-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-minimizar-la-ventana-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-guardar-como-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-escoba-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-borrar-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-más-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-de-acuerdo-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-visible-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lista-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ordenar-por-fecha-de-cierre-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-verificar-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancelar-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dar-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-vender-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-más-64.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
