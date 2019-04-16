@@ -60,6 +60,7 @@
     <Compile Include="correo.Designer.cs">
       <DependentUpon>correo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Datos\Inventario.cs" />
     <Compile Include="Datos\Usuari.cs" />
     <Compile Include="Entregar uniformes.cs">
       <SubType>Form</SubType>
