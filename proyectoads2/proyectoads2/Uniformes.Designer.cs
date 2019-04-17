@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnIngUniformeI = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnIngUniforme = new System.Windows.Forms.Button();
@@ -36,7 +37,6 @@
             this.btnEntregarI = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnEntregar = new System.Windows.Forms.Button();
             this.PnlContenedor = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnIngUniformeI)).BeginInit();
@@ -55,6 +55,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(551, 47);
             this.panel1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(53, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 22);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "MENU DE UNIFORMES";
             // 
             // panel3
             // 
@@ -86,6 +96,7 @@
             // 
             this.btnIngUniforme.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnIngUniforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngUniforme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnIngUniforme.Location = new System.Drawing.Point(38, 0);
             this.btnIngUniforme.Name = "btnIngUniforme";
             this.btnIngUniforme.Size = new System.Drawing.Size(118, 47);
@@ -124,6 +135,7 @@
             // 
             this.btnEntregar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnEntregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnEntregar.Location = new System.Drawing.Point(37, 0);
             this.btnEntregar.Name = "btnEntregar";
             this.btnEntregar.Size = new System.Drawing.Size(108, 47);
@@ -139,16 +151,6 @@
             this.PnlContenedor.Name = "PnlContenedor";
             this.PnlContenedor.Size = new System.Drawing.Size(551, 266);
             this.PnlContenedor.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(53, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 22);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "MENU DE UNIFORMES";
             // 
             // Uniformes
             // 

@@ -31,10 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnEntregarI = new Bunifu.Framework.UI.BunifuImageButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -44,9 +44,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.Location = new System.Drawing.Point(12, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(86, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Estudiante";
             // 
@@ -68,14 +69,6 @@
             this.panel1.Size = new System.Drawing.Size(513, 44);
             this.panel1.TabIndex = 8;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 69);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 11;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnEntregarI);
@@ -85,17 +78,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(156, 44);
             this.panel2.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(38, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 44);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Agregar Paquete";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnEntregarI
             // 
@@ -111,6 +93,27 @@
             this.btnEntregarI.TabIndex = 17;
             this.btnEntregarI.TabStop = false;
             this.btnEntregarI.Zoom = 10;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button1.Location = new System.Drawing.Point(38, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 44);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Agregar Paquete";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 69);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 11;
             // 
             // Ingresar_uniforme
             // 

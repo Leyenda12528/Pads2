@@ -41,9 +41,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(147, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 13);
+            this.label1.Size = new System.Drawing.Size(214, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tabla de Alimentos Vencidos";
             // 
@@ -58,9 +59,10 @@
             // btnBorrar
             // 
             this.btnBorrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnBorrar.Location = new System.Drawing.Point(37, 0);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(125, 41);
+            this.btnBorrar.Size = new System.Drawing.Size(125, 51);
             this.btnBorrar.TabIndex = 3;
             this.btnBorrar.Text = "Borrar registro de Vencidos";
             this.btnBorrar.UseVisualStyleBackColor = true;
@@ -70,9 +72,9 @@
             // 
             this.panel1.Controls.Add(this.btnBorrarI);
             this.panel1.Controls.Add(this.btnBorrar);
-            this.panel1.Location = new System.Drawing.Point(359, 12);
+            this.panel1.Location = new System.Drawing.Point(304, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(162, 41);
+            this.panel1.Size = new System.Drawing.Size(162, 51);
             this.panel1.TabIndex = 4;
             // 
             // btnBorrarI
@@ -84,7 +86,7 @@
             this.btnBorrarI.ImageActive = null;
             this.btnBorrarI.Location = new System.Drawing.Point(0, 0);
             this.btnBorrarI.Name = "btnBorrarI";
-            this.btnBorrarI.Size = new System.Drawing.Size(37, 41);
+            this.btnBorrarI.Size = new System.Drawing.Size(37, 51);
             this.btnBorrarI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBorrarI.TabIndex = 12;
             this.btnBorrarI.TabStop = false;

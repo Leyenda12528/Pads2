@@ -71,7 +71,6 @@ namespace proyectoads2.Base
             {
                 foreach (Inventario item in listInventario)
                 {
-                    //sql = "insert into inventario (id_inventario, fecha_ingreso, id_alimento, cantidad, fecha_vencimiento) values (?, ?, ?, ?, ?)";
                     Inventario inv2 = new Inventario();
                     inv2 = item;
                     sql = "insert into inventario values (?1, ?2, ?3, ?4, ?5)";
@@ -83,14 +82,9 @@ namespace proyectoads2.Base
                     Comando.Parameters.AddWithValue("?4", inv2.Cantidad);
                     Comando.Parameters.AddWithValue("?5", inv2.Fecha_vencimiento);
                     Comando.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("El pedido ha sido registrado");
-                    /*Comando.Parameters.Add(new MySqlParameter("id_inventario", 0));
-                    Comando.Parameters.Add(new MySqlParameter("fecha_ingreso", 0));
-                    Comando.Parameters.Add(new MySqlParameter("id_alimento", 0));
-                    Comando.Parameters.Add(new MySqlParameter("cantidad", 0));
-                    Comando.Parameters.Add(new MySqlParameter("fecha_vencimiento", 0));*/
+                    conn.Close();                                       
                 }
+                MessageBox.Show("El pedido ha sido registrado");
             }
             catch (Exception e)
             {

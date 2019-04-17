@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,8 @@ namespace proyectoads2
 
     public partial class ingreso_pedido : Form
     {
-        string txtFecha;
+        private string FechaActual;
+        private Help1 h = new Help1();
         public ingreso_pedido()
         {
             InitializeComponent();
@@ -28,43 +30,128 @@ namespace proyectoads2
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (carroz.Text != null && cfrijol.Text != null && cleche.Text != null && caceite.Text != null && cbebida.Text != null)
+            if (txtCArroz.Text.Length > 0 && txtCFrijol.Text.Length > 0 && txtCLeche.Text.Length > 0 && txtCAceite.Text.Length > 0 && txtCBebida.Text.Length > 0)
             {
-                Consultas cons = new Consultas();
-                List<Inventario> ListInventario = new List<Inventario>();
-                int v = cons.getLastIDInv();
-                //cons.agregarinventario();
-                txtFecha = Convert.ToDateTime(DateTime.Now).ToString("dd/MM/yyyy");
-                //MessageBox.Show(txtFecha);
-                int bandera = 4;
-
-                foreach (Control item in alimentospanel.Controls)
+                if (txtFarroz.Text.Length > 0 && txtFfrijol.Text.Length > 0 && txtFaceite.Text.Length > 0 && txtFleche.Text.Length > 0 && txtFbebida.Text.Length > 0)
                 {
-                    Inventario invent = new Inventario();
-                    invent.Fecha_vencimiento = item.Text;
-                    invent.Cantidad = Convert.ToInt32(item.Text);
-                    invent.Id_alimento = bandera;
-                    invent.Fecha_ingreso = txtFecha;
-                    invent.Id_inventario = v;
-                    ListInventario.Add(invent);
-                    bandera--;
-                    v++;
-                    
+                    if (h.exitsFecha(txtFarroz.Text) && h.dateMaxNow(txtFarroz.Text))
+                    {
+                        if (h.exitsFecha(txtFfrijol.Text) && h.dateMaxNow(txtFfrijol.Text))
+                        {
+                            if (h.exitsFecha(txtFaceite.Text) && h.dateMaxNow(txtFaceite.Text))
+                            {
+                                if (h.exitsFecha(txtFleche.Text) && h.dateMaxNow(txtFleche.Text))
+                                {
+                                    if (h.exitsFecha(txtFbebida.Text) && h.dateMaxNow(txtFbebida.Text))
+                                    {
+                                        Consultas cons = new Consultas();
+                                        List<Inventario> ListInventario = new List<Inventario>();
+                                        int v = cons.getLastIDInv();
+                                        FechaActual = Convert.ToDateTime(DateTime.Now).ToString("dd/MM/yyyy");
+                                        int bandera = 4;
+                                        int d = 0;
+                                        Inventario invent = null;
+                                        foreach (Control item in alimentospanel.Controls)
+                                        {
+                                            if (d == 0)
+                                            {
+                                                invent = new Inventario();
+                                                invent.Id_inventario = v;
+                                                invent.Id_alimento = bandera;
+                                                invent.Fecha_ingreso = FechaActual;
+                                                bandera--;
+                                                v++;
+                                                invent.Fecha_vencimiento = item.Text;
+                                                d++;
+                                            }
+                                            else
+                                            {
+                                                invent.Cantidad = Convert.ToInt32(item.Text);
+                                                ListInventario.Add(invent);
+                                                d = 0;
+                                            }
+
+                                        }
+                                        //probar(ListInventario);
+                                        cons.AddInventario(ListInventario);
+                                        limpiar();
+                                    }
+                                    else
+                                        MessageBox.Show("Fecha Vencimiento de Bebida invalida");
+                                }
+                                else
+                                    MessageBox.Show("Fecha Vencimiento de Leche invalida");
+                            }
+                            else
+                                MessageBox.Show("Fecha Vencimiento de Aceite invalida");
+                        }
+                        else
+                            MessageBox.Show("Fecha Vencimiento de Frijol invalida");
+                    }
+                    else
+                        MessageBox.Show("Fecha Vencimiento de Arroz invalida");
                 }
-                cons.AddInventario(ListInventario);
+                else
+                    MessageBox.Show("Tiene que llenar todos los campos de Fecha");            
             }
             else
-                MessageBox.Show("Tiene que llenar todos los campos");
+                MessageBox.Show("Tiene que llenar todos los campos de Cantidad");
         }
 
-        
-         /*if (Char.IsDigit(e.KeyChar))
+        private void limpiar()
+        {
+            foreach (TextBox item in alimentospanel.Controls)
+            {
+                item.Clear();
+            }
+        }
+        //probar(ListInventario);30/02/2019
+        //private void probar(List<Inventario> listInventario)
+        //{
+        //    foreach (Inventario item in listInventario)
+        //    {
+        //        MessageBox.Show("ID " + item.Id_inventario + "\n Id Ali " + item.Id_alimento + "\n Id cat" + item.Cantidad + "\n" + item.Fecha_ingreso + "\n" + item.Fecha_vencimiento);
+        //    }
+        //}
+
+        private void txtCArroz_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
+               e.Handled = false;
+           else           
+               e.Handled = true;
+        }
+
+        private void txtCFrijol_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
                 e.Handled = false;
             else
-            {
                 e.Handled = true;
-                
-            }*/
-    
+        }
+
+        private void txtCAceite_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void txtCLeche_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void txtCBebida_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
     }
 }
