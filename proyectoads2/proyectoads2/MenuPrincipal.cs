@@ -113,8 +113,11 @@ namespace proyectoads2
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+        {            
+            Login call = new Login();
+            call.Show();
+            this.Dispose();
+            //Application.Exit();
         }
     }
 }
