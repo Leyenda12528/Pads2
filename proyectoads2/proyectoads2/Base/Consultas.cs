@@ -7,6 +7,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using proyectoads2.Datos;
 using System.Windows.Forms;
+using System.Data;
 
 namespace proyectoads2.Base
 {
@@ -21,6 +22,32 @@ namespace proyectoads2.Base
         private MySqlCommand Comando = null;
         private MySqlConnection conn = null;
         private MySqlDataReader adap = null;
+        private MySqlDataAdapter adaptador = null;
+
+        internal void verinventario(DataGridView tabDatos)
+        {
+            try
+            {
+                sql = "SELECT inventario.id_inventario, inventario.fecha_ingreso, alimentos.alimento, inventario.cantidad, inventario.fecha_vencimiento FROM `inventario` INNER JOIN alimentos ON inventario.id_alimento = alimentos.id_alimento WHERE inventario.cantidad > 0";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                adaptador = new MySqlDataAdapter(Comando);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                tabDatos.DataSource = dt;
+                conn.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+            
+        }
+
+        
 
         internal bool exist(string user, string pass, Datos.Usuari usuario)
         {
@@ -60,6 +87,7 @@ namespace proyectoads2.Base
             }
             catch (Exception e)
             {
+                conn.Close();
                 MessageBox.Show(e + "");
                 throw;
             }
@@ -89,30 +117,41 @@ namespace proyectoads2.Base
             catch (Exception e)
             {
                 MessageBox.Show(e + "");
+                conn.Close();
                 throw;
             }
         }
 
         internal void getDatos(Usuari usuario)
         {
-            sql = "SELECT  usuario.usuario, usuario.id_cargo, usuario.correo,"
+            try
+            {
+                sql = "SELECT  usuario.usuario, usuario.id_cargo, usuario.correo,"
                 + " usuario.correo_destion, cargo.cargo"
                 + " FROM  usuario INNER JOIN"
                 + " cargo ON usuario.id_cargo = cargo.id_cargo"
                 + " WHERE id_user = ? ";
-            conn.Open();
-            Comando = new MySqlCommand(sql, conn);
-            Comando.Parameters.Add(new MySqlParameter("id_user", usuario.Id_user));
-            adap = Comando.ExecuteReader();
-            if (adap.Read())
-            {
-                usuario.Usuario = adap.GetValue(0).ToString();
-                usuario.Id_cargo = Convert.ToInt32(adap.GetValue(1));
-                usuario.Correo = adap.GetValue(2).ToString();
-                usuario.Correo_destino = adap.GetValue(3).ToString();
-                usuario.Cargo = adap.GetValue(4).ToString();
-                conn.Close();
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                Comando.Parameters.Add(new MySqlParameter("id_user", usuario.Id_user));
+                adap = Comando.ExecuteReader();
+                if (adap.Read())
+                {
+                    usuario.Usuario = adap.GetValue(0).ToString();
+                    usuario.Id_cargo = Convert.ToInt32(adap.GetValue(1));
+                    usuario.Correo = adap.GetValue(2).ToString();
+                    usuario.Correo_destino = adap.GetValue(3).ToString();
+                    usuario.Cargo = adap.GetValue(4).ToString();
+                    conn.Close();
+                }
             }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+            
         }
     }
 }

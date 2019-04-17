@@ -1,4 +1,5 @@
-﻿using System;
+﻿using proyectoads2.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace proyectoads2
         public inventario()
         {
             InitializeComponent();
+            Consultas consulta = new Consultas();
+            consulta.verinventario(tabDatos);
         }
 
     }
