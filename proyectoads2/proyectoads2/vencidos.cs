@@ -1,4 +1,5 @@
-﻿using System;
+﻿using proyectoads2.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace proyectoads2
 {
     public partial class vencidos : Form
     {
+        private Consultas consul = new Consultas();
         public vencidos()
         {
             InitializeComponent();
+            consul.verVendidos(DGVencidos);
         }
 
         private void btnBorrarI_Click(object sender, EventArgs e)
@@ -24,7 +27,7 @@ namespace proyectoads2
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-
+            consul.eliminarVencidos();
         }
     }
 }

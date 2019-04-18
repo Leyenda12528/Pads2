@@ -24,7 +24,142 @@ namespace proyectoads2.Base
         private MySqlDataReader adap = null;
         private MySqlDataAdapter adaptador = null;
 
-        internal void verinventario(DataGridView tabDatos)
+        internal void seeAlumnos(DataGridView dGVAlumnos)
+        {
+            try
+            {
+                sql = "SELECT alumno.id_alumno, alumno.nombre_alumno, estado.estado FROM alumno INNER JOIN estado " 
+                    +"on alumno.id_estado = estado.id_estado where alumno.id_estado = 0";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                adaptador = new MySqlDataAdapter(Comando);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                dGVAlumnos.DataSource = dt;
+                conn.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        public void addAlumno(string text1, string text2)
+        {
+            try
+            {
+                sql = "insert into alumno values (?1, ?2, 0)";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                Comando.Parameters.Add(new MySqlParameter("?1", text1));
+                Comando.Parameters.Add(new MySqlParameter("?2", text2));                
+                Comando.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Alumno Ingresado Correctamente!!");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        internal void BajarAlumno(string dselect)
+        {
+            try
+            {
+                sql = "update alumno set id_estado = 1 where id_alumno = ?1";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                Comando.Parameters.Add(new MySqlParameter("?1", dselect));                
+                Comando.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Alumno Dado de baja Correctamente!!");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        public bool exitsAlumno(string text)
+        {
+            try
+            {
+                sql = "SELECT * FROM alumno WHERE id_alumno = ?";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                Comando.Parameters.Add(new MySqlParameter("id_alumno", text));                
+                adap = Comando.ExecuteReader();
+                if (adap.Read())
+                {
+                    conn.Close();
+                    return true;
+                }
+                else
+                {                    
+                    conn.Close();
+                    return false;
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        public void verVendidos(DataGridView dGVencidos)
+        {
+            try
+            {
+                sql = "SELECT vencimientos.id_vencimiento, alimentos.alimento, vencimientos.cantidad FROM vencimientos  INNER JOIN alimentos"
+                        + " on vencimientos.id_alimento = alimentos.id_alimento";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                adaptador = new MySqlDataAdapter(Comando);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                dGVencidos.DataSource = dt;
+                conn.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        internal void eliminarVencidos()
+        {
+            try
+            {
+                sql = "update vencimientos set cantidad = 0";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                Comando.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Los vencimientos han sido eliminados");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        public void verinventario(DataGridView tabDatos)
         {
             try
             {

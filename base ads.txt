@@ -219,8 +219,21 @@ COMMIT;
 
 INSERT INTO `alimentos`(`id_alimento`, `alimento`) VALUES (0, 'Arroz'),(1, 'Frijol'),(2, 'Aceite'),(3, 'Leche'),(4, 'Bebida Fortificada');
 
+insert into estado values (0,'Activo'),(1,'Inactivo');
+insert into alumno values (0,'lucas rodriguez',0),(1,'bucky torres',0),(2,'juan perez',0);
+
+update vencimientos set cantidad = 0
+
+SELECT vencimientos.id_vencimiento, alimentos.alimento, vencimientos.cantidad FROM `vencimientos`  INNER JOIN alimentos 
+on vencimientos.id_alimento = alimentos.id_alimento
+
+SELECT alumno.id_alumno, alumno.nombre_alumno, estado.estado FROM alumno INNER JOIN estado 
+on alumno.id_estado = estado.id_estado where alumno.id_estado=0
 
 
+
+SELECT inventario.id_inventario, inventario.fecha_ingreso, alimentos.alimento, inventario.cantidad, inventario.fecha_vencimiento 
+FROM `inventario` INNER JOIN alimentos ON inventario.id_alimento = alimentos.id_alimento WHERE inventario.cantidad > 0
 
 
 

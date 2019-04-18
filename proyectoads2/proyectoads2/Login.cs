@@ -36,7 +36,7 @@ namespace proyectoads2
                     MenuPrincipal menu = new MenuPrincipal(usuario);
                     menu.Show();
                 }
-                else MessageBox.Show("Usuario/Contraseña incorrectos");
+                else { MessageBox.Show("Usuario/Contraseña incorrectos");  txtPass.Clear(); }
             }
             else MessageBox.Show("Campos Vacios");
         }
@@ -44,12 +44,6 @@ namespace proyectoads2
         private void salirbtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form2 call = new Form2();
-            call.Show();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

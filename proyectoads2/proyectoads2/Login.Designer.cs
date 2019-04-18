@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.btnCerrar = new Bunifu.Framework.UI.BunifuImageButton();
-            this.button2 = new System.Windows.Forms.Button();
             this.lblContra = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -49,7 +48,6 @@
             this.pnlLogin.BackgroundImage = global::proyectoads2.Properties.Resources.doc;
             this.pnlLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlLogin.Controls.Add(this.btnCerrar);
-            this.pnlLogin.Controls.Add(this.button2);
             this.pnlLogin.Controls.Add(this.lblContra);
             this.pnlLogin.Controls.Add(this.txtPass);
             this.pnlLogin.Controls.Add(this.btnLogin);
@@ -77,16 +75,6 @@
             this.btnCerrar.Zoom = 10;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(342, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // lblContra
             // 
             this.lblContra.AutoSize = true;
@@ -104,10 +92,9 @@
             this.txtPass.BackColor = System.Drawing.Color.LightGray;
             this.txtPass.Font = new System.Drawing.Font("MingLiU-ExtB", 20F, System.Drawing.FontStyle.Bold);
             this.txtPass.Location = new System.Drawing.Point(201, 206);
-            this.txtPass.Multiline = true;
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(247, 43);
+            this.txtPass.Size = new System.Drawing.Size(247, 39);
             this.txtPass.TabIndex = 4;
             this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
@@ -157,9 +144,8 @@
             this.txtUser.BackColor = System.Drawing.Color.LightGray;
             this.txtUser.Font = new System.Drawing.Font("MingLiU-ExtB", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.Location = new System.Drawing.Point(201, 124);
-            this.txtUser.Multiline = true;
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(247, 43);
+            this.txtUser.Size = new System.Drawing.Size(247, 39);
             this.txtUser.TabIndex = 1;
             this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
@@ -190,7 +176,6 @@
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.Button button2;
         private Bunifu.Framework.UI.BunifuImageButton btnCerrar;
     }
 }
