@@ -93,6 +93,26 @@ namespace proyectoads2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_apagar_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-apagar-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_apagar_filled_50__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-apagar-filled-50 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_borrar_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-borrar-40", resourceCulture);

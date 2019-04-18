@@ -119,5 +119,21 @@ namespace proyectoads2
             this.Dispose();
             //Application.Exit();
         }
+
+        private int posX = 0, posY = 0;
+        private void PnlBarra_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
+
+        }
     }
 }
