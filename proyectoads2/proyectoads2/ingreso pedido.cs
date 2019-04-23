@@ -34,15 +34,15 @@ namespace proyectoads2
             {
                 if (txtFarroz.Text.Length > 0 && txtFfrijol.Text.Length > 0 && txtFaceite.Text.Length > 0 && txtFleche.Text.Length > 0 && txtFbebida.Text.Length > 0)
                 {
-                    if (h.exitsFecha(txtFarroz.Text) && h.dateMaxNow(txtFarroz.Text))
+                    if (h.ExitsFecha(txtFarroz.Text) && h.DateMaxNow(txtFarroz.Text))
                     {
-                        if (h.exitsFecha(txtFfrijol.Text) && h.dateMaxNow(txtFfrijol.Text))
+                        if (h.ExitsFecha(txtFfrijol.Text) && h.DateMaxNow(txtFfrijol.Text))
                         {
-                            if (h.exitsFecha(txtFaceite.Text) && h.dateMaxNow(txtFaceite.Text))
+                            if (h.ExitsFecha(txtFaceite.Text) && h.DateMaxNow(txtFaceite.Text))
                             {
-                                if (h.exitsFecha(txtFleche.Text) && h.dateMaxNow(txtFleche.Text))
+                                if (h.ExitsFecha(txtFleche.Text) && h.DateMaxNow(txtFleche.Text))
                                 {
-                                    if (h.exitsFecha(txtFbebida.Text) && h.dateMaxNow(txtFbebida.Text))
+                                    if (h.ExitsFecha(txtFbebida.Text) && h.DateMaxNow(txtFbebida.Text))
                                     {
                                         Consultas cons = new Consultas();
                                         List<Inventario> ListInventario = new List<Inventario>();
@@ -77,25 +77,25 @@ namespace proyectoads2
                                         Limpiar();
                                     }
                                     else
-                                        MessageBox.Show("Fecha Vencimiento de Bebida invalida");
+                                        MessageBox.Show("Fecha Vencimiento de Bebida invalida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                                 else
-                                    MessageBox.Show("Fecha Vencimiento de Leche invalida");
+                                    MessageBox.Show("Fecha Vencimiento de Leche invalida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             else
-                                MessageBox.Show("Fecha Vencimiento de Aceite invalida");
+                                MessageBox.Show("Fecha Vencimiento de Aceite invalida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
-                            MessageBox.Show("Fecha Vencimiento de Frijol invalida");
+                            MessageBox.Show("Fecha Vencimiento de Frijol invalida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
-                        MessageBox.Show("Fecha Vencimiento de Arroz invalida");
+                        MessageBox.Show("Fecha Vencimiento de Arroz invalida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
-                    MessageBox.Show("Tiene que llenar todos los campos de Fecha");            
+                    MessageBox.Show("Tiene que llenar todos los campos de Fecha", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-                MessageBox.Show("Tiene que llenar todos los campos de Cantidad");
+                MessageBox.Show("Tiene que llenar todos los campos de Cantidad", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void Limpiar()

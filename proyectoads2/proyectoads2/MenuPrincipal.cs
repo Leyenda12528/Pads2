@@ -68,6 +68,11 @@ namespace proyectoads2
             Mostrar(new ingresaralumno());
         }
 
+        private void BtnCorreo_Click(object sender, EventArgs e)
+        {
+            Mostrar(new Correo(usuario));
+        }
+
         private void BtnExpandir_Click(object sender, EventArgs e)
         {
             if (van == 0)
@@ -80,6 +85,10 @@ namespace proyectoads2
                 pnlMenu.Size = new Size(161, pnlMenu.Size.Height);
                 van = 0;
             }
+        }
+        private void BtnCorreoI_Click(object sender, EventArgs e)
+        {
+            BtnCorreo_Click(null, null);
         }
 
         private void BtnInicio_Click(object sender, EventArgs e)
@@ -125,7 +134,8 @@ namespace proyectoads2
             //Application.Exit();
         }
 
-        private int posX = 0, posY = 0;
+        private int posX = 0, posY = 0;              
+
         private void PnlBarra_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)

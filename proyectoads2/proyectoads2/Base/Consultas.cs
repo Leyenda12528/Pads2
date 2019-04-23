@@ -92,7 +92,7 @@ namespace proyectoads2.Base
                 Comando.Parameters.Add(new MySqlParameter("?5", usuario.Id_user));
                 Comando.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show("Sus datos han sido actualizados Correctamente!!");
+                MessageBox.Show("Sus datos han sido actualizados Correctamente!!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e)
             {
@@ -113,7 +113,7 @@ namespace proyectoads2.Base
                 Comando.Parameters.Add(new MySqlParameter("?2", text2));                
                 Comando.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show("Alumno Ingresado Correctamente!!");
+                MessageBox.Show("Alumno Ingresado Correctamente!!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e)
             {
@@ -133,7 +133,7 @@ namespace proyectoads2.Base
                 Comando.Parameters.Add(new MySqlParameter("?1", dselect));                
                 Comando.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show("Alumno Dado de baja Correctamente!!");
+                MessageBox.Show("Alumno Dado de baja Correctamente!!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e)
             {
@@ -204,7 +204,7 @@ namespace proyectoads2.Base
                 Comando = new MySqlCommand(sql, conn);
                 Comando.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show("Los vencimientos han sido eliminados");
+                MessageBox.Show("Los vencimientos han sido eliminados", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e)
             {
@@ -303,7 +303,7 @@ namespace proyectoads2.Base
                     Comando.ExecuteNonQuery();
                     conn.Close();                                       
                 }
-                MessageBox.Show("El pedido ha sido registrado");
+                MessageBox.Show("El pedido ha sido registrado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e)
             {

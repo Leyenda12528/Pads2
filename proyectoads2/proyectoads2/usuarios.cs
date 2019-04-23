@@ -14,6 +14,7 @@ namespace proyectoads2
 {
     public partial class Usuarios : Form
     {
+        private Help1 h = new Help1();
         private Usuari usuario = new Usuari();
         private Consultas consul = new Consultas();
 
@@ -56,10 +57,14 @@ namespace proyectoads2
                 {
                     if (txtCorreo.Text.Trim().Length > 0 && txtContra2.Text.Trim().Length > 0 && txtCorreo2.Text.Trim().Length > 0)
                     {
-                        PasarDatos();
-                        consul.UpdateUser(usuario);
+                        if (h.ValidarCorreo(txtCorreo.Text) && h.ValidarCorreo(txtCorreo2.Text))
+                        {
+                            PasarDatos();
+                            consul.UpdateUser(usuario);
+                        }
+                        else MessageBox.Show("El formato de los correos no es valido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else MessageBox.Show("Llene todos los campos", "ERROR");
+                    else MessageBox.Show("Llene todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -67,7 +72,7 @@ namespace proyectoads2
                     consul.UpdateUser(usuario);
                 }
             }
-            else MessageBox.Show("Campos vacios, debe ingresarlos", "ERROR");
+            else MessageBox.Show("Campos vacios, debe ingresarlos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void PasarDatos()

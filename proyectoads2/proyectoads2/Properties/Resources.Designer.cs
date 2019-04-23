@@ -303,6 +303,16 @@ namespace proyectoads2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_nuevo_post_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-nuevo-post-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_ordenar_por_fecha_de_cierre_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-ordenar-por-fecha-de-cierre-80", resourceCulture);

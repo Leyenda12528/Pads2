@@ -11,11 +11,11 @@ namespace proyectoads2.Base
 {
     public class Help1
     {
-        private String valor = "'%;(-)º<>¿?*//\\ª!·$&=^¨¡`+´ç";
+        private String valor = "'%;()º<>¿?*//\\ª!·$&=^¨¡`+´ç";
         private bool var = false;
         public Help1() { }
 
-        internal bool valorRestringuido(char keyChar)
+        internal bool ValorRestringuido(char keyChar)
         {
             for (int i = 0; i < valor.Length; i++)
             {
@@ -29,7 +29,7 @@ namespace proyectoads2.Base
             return var;            
         }
 
-        public bool validarCorreo(String text)
+        public bool ValidarCorreo(String text)
         {
             String correo = "^[_a-zA-Z0-9-]+(\\.[_a-zA-Z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,4})$";
              return text != null && Regex.IsMatch(text, correo);
@@ -37,14 +37,14 @@ namespace proyectoads2.Base
             //else return false;
         }        
 
-        public bool exitsFecha(String fechaProd)
+        public bool ExitsFecha(String fechaProd)
         {
             DateTime DateValue;
             Boolean dd = DateTime.TryParseExact(fechaProd, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateValue);
             return dd;
         }
 
-        public bool dateMaxNow(String fechaProd)
+        public bool DateMaxNow(String fechaProd)
         {
             DateTime fechaF = Convert.ToDateTime(fechaProd).Date;
             DateTime FechAc = DateTime.Now.Date;

@@ -51,22 +51,22 @@ namespace proyectoads2
                     txtNombre.Clear();
                     mostrarAlumnos();
                 }
-                else MessageBox.Show("ERROR\n\nYa existe un Alumno con ese ID ");
+                else MessageBox.Show("ERROR\n\nYa existe un Alumno con ese ID ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else MessageBox.Show("ERROR\n\nCampos Vacios");
+            else MessageBox.Show("ERROR\n\nCampos Vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
             if (IDselect.Length > 0)
             {
-                if (MessageBox.Show("Desea dar de baja al Alumno con ID: " + IDselect, "Dar de Baja", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Desea dar de baja al Alumno con ID: " + IDselect, "Dar de Baja", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     consul.BajarAlumno(IDselect);
                     mostrarAlumnos();
                 }
             }
-            else MessageBox.Show("Seleccione un Alumno");
+            else MessageBox.Show("Seleccione un Alumno", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)

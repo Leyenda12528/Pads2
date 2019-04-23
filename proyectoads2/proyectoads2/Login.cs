@@ -36,9 +36,13 @@ namespace proyectoads2
                     MenuPrincipal menu = new MenuPrincipal(usuario);
                     menu.Show();
                 }
-                else { MessageBox.Show("Usuario/Contraseña incorrectos");  txtPass.Clear(); }
+                else
+                {
+                    MessageBox.Show("Usuario/Contraseña incorrectos","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPass.Clear();
+                }
             }
-            else MessageBox.Show("Campos Vacios");
+            else MessageBox.Show("Campos Vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void salirbtn_Click(object sender, EventArgs e)
@@ -67,7 +71,7 @@ namespace proyectoads2
 
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (h.valorRestringuido(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Space))
+            if (h.ValorRestringuido(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Space))
                 e.Handled = true;
             else
             {
@@ -79,7 +83,7 @@ namespace proyectoads2
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (h.valorRestringuido(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Space))            
+            if (h.ValorRestringuido(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Space))            
                 e.Handled = true;            
             else {
                 e.Handled = false;

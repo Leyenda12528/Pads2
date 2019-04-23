@@ -38,8 +38,8 @@
             this.PnlContenedor = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlCorreo = new System.Windows.Forms.Panel();
-            this.btnCorreo = new System.Windows.Forms.Button();
-            this.btnCorreoI = new Bunifu.Framework.UI.BunifuImageButton();
+            this.BtnCorreo = new System.Windows.Forms.Button();
+            this.BtnCorreoI = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnInicio = new System.Windows.Forms.Button();
             this.btnInicioI = new Bunifu.Framework.UI.BunifuImageButton();
@@ -65,7 +65,7 @@
             this.panel2.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.pnlCorreo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCorreoI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCorreoI)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicioI)).BeginInit();
             this.panel9.SuspendLayout();
@@ -203,40 +203,42 @@
             // 
             // pnlCorreo
             // 
-            this.pnlCorreo.Controls.Add(this.btnCorreo);
-            this.pnlCorreo.Controls.Add(this.btnCorreoI);
+            this.pnlCorreo.Controls.Add(this.BtnCorreo);
+            this.pnlCorreo.Controls.Add(this.BtnCorreoI);
             this.pnlCorreo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCorreo.Location = new System.Drawing.Point(0, 220);
             this.pnlCorreo.Name = "pnlCorreo";
             this.pnlCorreo.Size = new System.Drawing.Size(161, 44);
             this.pnlCorreo.TabIndex = 12;
             // 
-            // btnCorreo
+            // BtnCorreo
             // 
-            this.btnCorreo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCorreo.Location = new System.Drawing.Point(37, 0);
-            this.btnCorreo.Name = "btnCorreo";
-            this.btnCorreo.Size = new System.Drawing.Size(124, 44);
-            this.btnCorreo.TabIndex = 11;
-            this.btnCorreo.Text = "Correo";
-            this.btnCorreo.UseVisualStyleBackColor = true;
+            this.BtnCorreo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCorreo.Location = new System.Drawing.Point(37, 0);
+            this.BtnCorreo.Name = "BtnCorreo";
+            this.BtnCorreo.Size = new System.Drawing.Size(124, 44);
+            this.BtnCorreo.TabIndex = 11;
+            this.BtnCorreo.Text = "Correo";
+            this.BtnCorreo.UseVisualStyleBackColor = true;
+            this.BtnCorreo.Click += new System.EventHandler(this.BtnCorreo_Click);
             // 
-            // btnCorreoI
+            // BtnCorreoI
             // 
-            this.btnCorreoI.BackColor = System.Drawing.Color.Transparent;
-            this.btnCorreoI.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCorreoI.ErrorImage = global::proyectoads2.Properties.Resources.icons8_cerrar_ventana_50;
-            this.btnCorreoI.Image = global::proyectoads2.Properties.Resources.icons8_nuevo_post_48;
-            this.btnCorreoI.ImageActive = null;
-            this.btnCorreoI.Location = new System.Drawing.Point(0, 0);
-            this.btnCorreoI.Name = "btnCorreoI";
-            this.btnCorreoI.Size = new System.Drawing.Size(37, 44);
-            this.btnCorreoI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCorreoI.TabIndex = 10;
-            this.btnCorreoI.TabStop = false;
-            this.btnCorreoI.Zoom = 10;
+            this.BtnCorreoI.BackColor = System.Drawing.Color.Transparent;
+            this.BtnCorreoI.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnCorreoI.ErrorImage = global::proyectoads2.Properties.Resources.icons8_cerrar_ventana_50;
+            this.BtnCorreoI.Image = global::proyectoads2.Properties.Resources.icons8_nuevo_post_48;
+            this.BtnCorreoI.ImageActive = null;
+            this.BtnCorreoI.Location = new System.Drawing.Point(0, 0);
+            this.BtnCorreoI.Name = "BtnCorreoI";
+            this.BtnCorreoI.Size = new System.Drawing.Size(37, 44);
+            this.BtnCorreoI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnCorreoI.TabIndex = 10;
+            this.BtnCorreoI.TabStop = false;
+            this.BtnCorreoI.Zoom = 10;
+            this.BtnCorreoI.Click += new System.EventHandler(this.BtnCorreoI_Click);
             // 
             // panel1
             // 
@@ -489,7 +491,7 @@
             this.panel2.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
             this.pnlCorreo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnCorreoI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCorreoI)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnInicioI)).EndInit();
             this.panel9.ResumeLayout(false);
@@ -534,8 +536,8 @@
         private System.Windows.Forms.Button btnInicio;
         private Bunifu.Framework.UI.BunifuImageButton btnInicioI;
         private System.Windows.Forms.Panel pnlCorreo;
-        private System.Windows.Forms.Button btnCorreo;
-        private Bunifu.Framework.UI.BunifuImageButton btnCorreoI;
+        private System.Windows.Forms.Button BtnCorreo;
+        private Bunifu.Framework.UI.BunifuImageButton BtnCorreoI;
         private Bunifu.Framework.UI.BunifuImageButton btnMinimizar;
         private Bunifu.Framework.UI.BunifuImageButton btnCerrar;
     }
