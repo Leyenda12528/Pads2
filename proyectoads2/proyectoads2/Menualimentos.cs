@@ -73,7 +73,7 @@ namespace proyectoads2
 
         private void btnIngPedido_Click(object sender, EventArgs e)
         {
-            mostrar(new ingreso_pedido());
+            mostrar(new Ingreso_pedido());
         }
 
         private void btnVerInventario_Click(object sender, EventArgs e)

@@ -15,6 +15,22 @@ namespace proyectoads2.Datos
         private int id_cargo;
         private String correo;
         private String correo_destino;
+        private String contracorreo;
+        private String contra;
+
+        public String Contra
+        {
+            get { return contra; }
+            set { contra = value; }
+        }
+
+
+        public String Contracorreo
+        {
+            get { return contracorreo; }
+            set { contracorreo = value; }
+        }
+
 
         public String Id_user
         {

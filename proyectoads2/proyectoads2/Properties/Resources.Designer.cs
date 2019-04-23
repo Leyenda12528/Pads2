@@ -113,6 +113,16 @@ namespace proyectoads2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_asistente_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-asistente-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_borrar_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-borrar-40", resourceCulture);
@@ -186,6 +196,16 @@ namespace proyectoads2.Properties {
         internal static System.Drawing.Bitmap icons8_de_acuerdo_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-de-acuerdo-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_editar_propiedad_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-editar-propiedad-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

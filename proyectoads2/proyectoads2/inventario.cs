@@ -17,7 +17,7 @@ namespace proyectoads2
         {
             InitializeComponent();
             Consultas consulta = new Consultas();
-            consulta.verinventario(tabDatos);
+            consulta.VerInventario(tabDatos);
         }
 
     }

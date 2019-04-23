@@ -37,7 +37,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.PnlContenedor = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlCorreo = new System.Windows.Forms.Panel();
             this.btnCorreo = new System.Windows.Forms.Button();
             this.btnCorreoI = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -64,7 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnExpandir)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnlMenu.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlCorreo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCorreoI)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicioI)).BeginInit();
@@ -109,7 +109,7 @@
             this.btnMinimizar.TabIndex = 11;
             this.btnMinimizar.TabStop = false;
             this.btnMinimizar.Zoom = 10;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            this.btnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
             // 
             // btnCerrar
             // 
@@ -125,7 +125,7 @@
             this.btnCerrar.TabIndex = 10;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Zoom = 10;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.btnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // btnExpandir
             // 
@@ -141,7 +141,7 @@
             this.btnExpandir.TabIndex = 9;
             this.btnExpandir.TabStop = false;
             this.btnExpandir.Zoom = 10;
-            this.btnExpandir.Click += new System.EventHandler(this.btnExpandir_Click);
+            this.btnExpandir.Click += new System.EventHandler(this.BtnExpandir_Click);
             // 
             // lblCargo
             // 
@@ -188,7 +188,7 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.pnlMenu.Controls.Add(this.panel3);
+            this.pnlMenu.Controls.Add(this.pnlCorreo);
             this.pnlMenu.Controls.Add(this.panel1);
             this.pnlMenu.Controls.Add(this.panel9);
             this.pnlMenu.Controls.Add(this.panel8);
@@ -201,15 +201,15 @@
             this.pnlMenu.Size = new System.Drawing.Size(161, 414);
             this.pnlMenu.TabIndex = 4;
             // 
-            // panel3
+            // pnlCorreo
             // 
-            this.panel3.Controls.Add(this.btnCorreo);
-            this.panel3.Controls.Add(this.btnCorreoI);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 220);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(161, 44);
-            this.panel3.TabIndex = 12;
+            this.pnlCorreo.Controls.Add(this.btnCorreo);
+            this.pnlCorreo.Controls.Add(this.btnCorreoI);
+            this.pnlCorreo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlCorreo.Location = new System.Drawing.Point(0, 220);
+            this.pnlCorreo.Name = "pnlCorreo";
+            this.pnlCorreo.Size = new System.Drawing.Size(161, 44);
+            this.pnlCorreo.TabIndex = 12;
             // 
             // btnCorreo
             // 
@@ -259,7 +259,7 @@
             this.btnInicio.TabIndex = 11;
             this.btnInicio.Text = "Inicio";
             this.btnInicio.UseVisualStyleBackColor = true;
-            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            this.btnInicio.Click += new System.EventHandler(this.BtnInicio_Click);
             // 
             // btnInicioI
             // 
@@ -275,7 +275,7 @@
             this.btnInicioI.TabIndex = 10;
             this.btnInicioI.TabStop = false;
             this.btnInicioI.Zoom = 10;
-            this.btnInicioI.Click += new System.EventHandler(this.btnInicioI_Click);
+            this.btnInicioI.Click += new System.EventHandler(this.BtnInicioI_Click);
             // 
             // panel9
             // 
@@ -335,7 +335,7 @@
             this.btnAlumnos.TabIndex = 11;
             this.btnAlumnos.Text = "Alumnos";
             this.btnAlumnos.UseVisualStyleBackColor = true;
-            this.btnAlumnos.Click += new System.EventHandler(this.btnAlumnos_Click);
+            this.btnAlumnos.Click += new System.EventHandler(this.BtnAlumnos_Click);
             // 
             // btnAlumnosI
             // 
@@ -351,7 +351,7 @@
             this.btnAlumnosI.TabIndex = 10;
             this.btnAlumnosI.TabStop = false;
             this.btnAlumnosI.Zoom = 10;
-            this.btnAlumnosI.Click += new System.EventHandler(this.btnAlumnosI_Click);
+            this.btnAlumnosI.Click += new System.EventHandler(this.BtnAlumnosI_Click);
             // 
             // panel7
             // 
@@ -374,7 +374,7 @@
             this.btnUsuarios.TabIndex = 11;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            this.btnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
             // 
             // btnUsuariosI
             // 
@@ -390,7 +390,7 @@
             this.btnUsuariosI.TabIndex = 10;
             this.btnUsuariosI.TabStop = false;
             this.btnUsuariosI.Zoom = 10;
-            this.btnUsuariosI.Click += new System.EventHandler(this.btnUsuariosI_Click);
+            this.btnUsuariosI.Click += new System.EventHandler(this.BtnUsuariosI_Click);
             // 
             // panel6
             // 
@@ -413,7 +413,7 @@
             this.btnUniformes.TabIndex = 11;
             this.btnUniformes.Text = "Uniformes";
             this.btnUniformes.UseVisualStyleBackColor = true;
-            this.btnUniformes.Click += new System.EventHandler(this.btnUniformes_Click);
+            this.btnUniformes.Click += new System.EventHandler(this.BtnUniformes_Click);
             // 
             // btnUniformesI
             // 
@@ -429,7 +429,7 @@
             this.btnUniformesI.TabIndex = 10;
             this.btnUniformesI.TabStop = false;
             this.btnUniformesI.Zoom = 10;
-            this.btnUniformesI.Click += new System.EventHandler(this.btnUniformesI_Click);
+            this.btnUniformesI.Click += new System.EventHandler(this.BtnUniformesI_Click);
             // 
             // panel5
             // 
@@ -452,7 +452,7 @@
             this.btnAlimentos.TabIndex = 11;
             this.btnAlimentos.Text = "Alimentos";
             this.btnAlimentos.UseVisualStyleBackColor = true;
-            this.btnAlimentos.Click += new System.EventHandler(this.btnAlimentos_Click);
+            this.btnAlimentos.Click += new System.EventHandler(this.BtnAlimentos_Click);
             // 
             // btnAlimentosI
             // 
@@ -468,7 +468,7 @@
             this.btnAlimentosI.TabIndex = 10;
             this.btnAlimentosI.TabStop = false;
             this.btnAlimentosI.Zoom = 10;
-            this.btnAlimentosI.Click += new System.EventHandler(this.btnAlimentosI_Click);
+            this.btnAlimentosI.Click += new System.EventHandler(this.BtnAlimentosI_Click);
             // 
             // MenuPrincipal
             // 
@@ -488,7 +488,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnExpandir)).EndInit();
             this.panel2.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.pnlCorreo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnCorreoI)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnInicioI)).EndInit();
@@ -533,7 +533,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnInicio;
         private Bunifu.Framework.UI.BunifuImageButton btnInicioI;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlCorreo;
         private System.Windows.Forms.Button btnCorreo;
         private Bunifu.Framework.UI.BunifuImageButton btnCorreoI;
         private Bunifu.Framework.UI.BunifuImageButton btnMinimizar;

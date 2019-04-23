@@ -235,7 +235,7 @@ on alumno.id_estado = estado.id_estado where alumno.id_estado=0
 SELECT inventario.id_inventario, inventario.fecha_ingreso, alimentos.alimento, inventario.cantidad, inventario.fecha_vencimiento 
 FROM `inventario` INNER JOIN alimentos ON inventario.id_alimento = alimentos.id_alimento WHERE inventario.cantidad > 0
 
-
+INSERT INTO usuario VALUES(1,'secre',sha2('123',256),1,'','','');
 
 
 

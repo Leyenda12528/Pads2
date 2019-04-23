@@ -14,21 +14,21 @@ using System.Windows.Forms;
 namespace proyectoads2
 {
 
-    public partial class ingreso_pedido : Form
+    public partial class Ingreso_pedido : Form
     {
         private string FechaActual;
         private Help1 h = new Help1();
-        public ingreso_pedido()
+        public Ingreso_pedido()
         {
             InitializeComponent();
         }
 
-        private void btnRegistrarI_Click(object sender, EventArgs e)
+        private void BtnRegistrarI_Click(object sender, EventArgs e)
         {
-            btnRegistrar_Click(null,null);
+            BtnRegistrar_Click(null,null);
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        private void BtnRegistrar_Click(object sender, EventArgs e)
         {
             if (txtCArroz.Text.Length > 0 && txtCFrijol.Text.Length > 0 && txtCLeche.Text.Length > 0 && txtCAceite.Text.Length > 0 && txtCBebida.Text.Length > 0)
             {
@@ -46,7 +46,7 @@ namespace proyectoads2
                                     {
                                         Consultas cons = new Consultas();
                                         List<Inventario> ListInventario = new List<Inventario>();
-                                        int v = cons.getLastIDInv();
+                                        int v = cons.GetLastIDInv();
                                         FechaActual = Convert.ToDateTime(DateTime.Now).ToString("dd/MM/yyyy");
                                         int bandera = 4;
                                         int d = 0;
@@ -74,7 +74,7 @@ namespace proyectoads2
                                         }
                                         //probar(ListInventario);
                                         cons.AddInventario(ListInventario);
-                                        limpiar();
+                                        Limpiar();
                                     }
                                     else
                                         MessageBox.Show("Fecha Vencimiento de Bebida invalida");
@@ -98,7 +98,7 @@ namespace proyectoads2
                 MessageBox.Show("Tiene que llenar todos los campos de Cantidad");
         }
 
-        private void limpiar()
+        private void Limpiar()
         {
             foreach (TextBox item in alimentospanel.Controls)
             {
@@ -114,7 +114,7 @@ namespace proyectoads2
         //    }
         //}
 
-        private void txtCArroz_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtCArroz_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
                e.Handled = false;
@@ -122,7 +122,7 @@ namespace proyectoads2
                e.Handled = true;
         }
 
-        private void txtCFrijol_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtCFrijol_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
                 e.Handled = false;
@@ -130,7 +130,7 @@ namespace proyectoads2
                 e.Handled = true;
         }
 
-        private void txtCAceite_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtCAceite_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
                 e.Handled = false;
@@ -138,7 +138,7 @@ namespace proyectoads2
                 e.Handled = true;
         }
 
-        private void txtCLeche_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtCLeche_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
                 e.Handled = false;
@@ -146,7 +146,7 @@ namespace proyectoads2
                 e.Handled = true;
         }
 
-        private void txtCBebida_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtCBebida_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
                 e.Handled = false;

@@ -116,6 +116,12 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Opcuser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opcuser.Designer.cs">
+      <DependentUpon>Opcuser.cs</DependentUpon>
+    </Compile>
     <Compile Include="planificacionmenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opcuser.resx">
+      <DependentUpon>Opcuser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="planificacionmenu.resx">
       <DependentUpon>planificacionmenu.cs</DependentUpon>
@@ -299,6 +308,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-apagar-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-editar-propiedad-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-asistente-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -17,7 +17,7 @@ namespace proyectoads2
         public vencidos()
         {
             InitializeComponent();
-            consul.verVendidos(DGVencidos);
+            consul.VerVendidos(DGVencidos);
         }
 
         private void btnBorrarI_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace proyectoads2
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            consul.eliminarVencidos();
+            consul.EliminarVencidos();
         }
     }
 }

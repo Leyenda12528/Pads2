@@ -29,9 +29,9 @@ namespace proyectoads2
         {
             if (txtPass.Text.Length > 0 && txtUser.Text.Length > 0)
             {
-                if (consulta.exist(txtUser.Text, txtPass.Text, usuario))
+                if (consulta.Exist(txtUser.Text, txtPass.Text, usuario))
                 {
-                    consulta.getDatos(usuario);
+                    consulta.GetDatos(usuario);
                     this.Hide();
                     MenuPrincipal menu = new MenuPrincipal(usuario);
                     menu.Show();

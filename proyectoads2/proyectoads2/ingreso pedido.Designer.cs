@@ -1,6 +1,6 @@
 ﻿namespace proyectoads2
 {
-    partial class ingreso_pedido
+    partial class Ingreso_pedido
     {
         /// <summary>
         /// Required designer variable.
@@ -150,7 +150,7 @@
             this.btnRegistrarI.TabIndex = 12;
             this.btnRegistrarI.TabStop = false;
             this.btnRegistrarI.Zoom = 10;
-            this.btnRegistrarI.Click += new System.EventHandler(this.btnRegistrarI_Click);
+            this.btnRegistrarI.Click += new System.EventHandler(this.BtnRegistrarI_Click);
             // 
             // btnRegistrar
             // 
@@ -163,7 +163,7 @@
             this.btnRegistrar.TabIndex = 1;
             this.btnRegistrar.Text = "Registrar Ingreso";
             this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
             // label8
             // 
@@ -208,7 +208,7 @@
             this.txtCBebida.Size = new System.Drawing.Size(100, 26);
             this.txtCBebida.TabIndex = 29;
             this.txtCBebida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCBebida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCBebida_KeyPress);
+            this.txtCBebida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCBebida_KeyPress);
             // 
             // txtFleche
             // 
@@ -225,7 +225,7 @@
             this.txtCLeche.Size = new System.Drawing.Size(100, 26);
             this.txtCLeche.TabIndex = 27;
             this.txtCLeche.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCLeche.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCLeche_KeyPress);
+            this.txtCLeche.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCLeche_KeyPress);
             // 
             // txtFaceite
             // 
@@ -242,7 +242,7 @@
             this.txtCAceite.Size = new System.Drawing.Size(100, 26);
             this.txtCAceite.TabIndex = 25;
             this.txtCAceite.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCAceite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCAceite_KeyPress);
+            this.txtCAceite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCAceite_KeyPress);
             // 
             // txtFfrijol
             // 
@@ -259,7 +259,7 @@
             this.txtCFrijol.Size = new System.Drawing.Size(100, 26);
             this.txtCFrijol.TabIndex = 23;
             this.txtCFrijol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCFrijol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCFrijol_KeyPress);
+            this.txtCFrijol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCFrijol_KeyPress);
             // 
             // txtFarroz
             // 
@@ -276,7 +276,7 @@
             this.txtCArroz.Size = new System.Drawing.Size(100, 26);
             this.txtCArroz.TabIndex = 0;
             this.txtCArroz.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCArroz.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCArroz_KeyPress);
+            this.txtCArroz.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCArroz_KeyPress);
             // 
             // ingreso_pedido
             // 

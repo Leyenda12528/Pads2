@@ -14,6 +14,7 @@ namespace proyectoads2
     public partial class MenuPrincipal : Form
     {
         private int van = 0;
+        private Usuari usuario = new Usuari();
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -24,9 +25,13 @@ namespace proyectoads2
             InitializeComponent();
             lblUser.Text = usuario.Usuario;
             lblCargo.Text = usuario.Cargo;
+            this.usuario = usuario;
+            if (usuario.Id_cargo == 1)
+                pnlCorreo.Hide();
+            
         }
 
-        private void mostrar(object frm)
+        private void Mostrar(object frm)
         {
             if (this.PnlContenedor.Controls.Count > 0)
                 this.PnlContenedor.Controls.RemoveAt(0);
@@ -38,32 +43,32 @@ namespace proyectoads2
             formu.Show();
         }
 
-        private void minimizar_Click(object sender, EventArgs e)
+        private void Minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnAlimentos_Click(object sender, EventArgs e)
+        private void BtnAlimentos_Click(object sender, EventArgs e)
         {
-            mostrar(new Menualimentos());
+            Mostrar(new Menualimentos());
         }
 
-        private void btnUniformes_Click(object sender, EventArgs e)
+        private void BtnUniformes_Click(object sender, EventArgs e)
         {
-            mostrar(new Uniformes());
+            Mostrar(new Uniformes());
         }
 
-        private void btnUsuarios_Click(object sender, EventArgs e)
+        private void BtnUsuarios_Click(object sender, EventArgs e)
         {
-            mostrar(new usuarios());
+            Mostrar(new Opcuser(usuario));
         }
 
-        private void btnAlumnos_Click(object sender, EventArgs e)
+        private void BtnAlumnos_Click(object sender, EventArgs e)
         {
-            mostrar(new ingresaralumno());
+            Mostrar(new ingresaralumno());
         }
 
-        private void btnExpandir_Click(object sender, EventArgs e)
+        private void BtnExpandir_Click(object sender, EventArgs e)
         {
             if (van == 0)
             {
@@ -77,42 +82,42 @@ namespace proyectoads2
             }
         }
 
-        private void btnInicio_Click(object sender, EventArgs e)
+        private void BtnInicio_Click(object sender, EventArgs e)
         {
             PnlContenedor.Controls.Clear();
         }
 
-        private void btnAlimentosI_Click(object sender, EventArgs e)
+        private void BtnAlimentosI_Click(object sender, EventArgs e)
         {
-            btnAlimentos_Click(null, null);
+            BtnAlimentos_Click(null, null);
         }
 
-        private void btnUniformesI_Click(object sender, EventArgs e)
+        private void BtnUniformesI_Click(object sender, EventArgs e)
         {
-            btnUniformes_Click(null, null);
+            BtnUniformes_Click(null, null);
         }
 
-        private void btnUsuariosI_Click(object sender, EventArgs e)
+        private void BtnUsuariosI_Click(object sender, EventArgs e)
         {
-            btnUsuarios_Click(null, null);
+            BtnUsuarios_Click(null, null);
         }
 
-        private void btnAlumnosI_Click(object sender, EventArgs e)
+        private void BtnAlumnosI_Click(object sender, EventArgs e)
         {
-            btnAlumnos_Click(null, null);
+            BtnAlumnos_Click(null, null);
         }
 
-        private void btnInicioI_Click(object sender, EventArgs e)
+        private void BtnInicioI_Click(object sender, EventArgs e)
         {
-            btnInicio_Click(null, null);
+            BtnInicio_Click(null, null);
         }
 
-        private void btnMinimizar_Click(object sender, EventArgs e)
+        private void BtnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void BtnCerrar_Click(object sender, EventArgs e)
         {            
             Login call = new Login();
             call.Show();

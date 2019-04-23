@@ -24,7 +24,7 @@ namespace proyectoads2.Base
         private MySqlDataReader adap = null;
         private MySqlDataAdapter adaptador = null;
 
-        internal void seeAlumnos(DataGridView dGVAlumnos)
+        internal void SeeAlumnos(DataGridView dGVAlumnos)
         {
             try
             {
@@ -47,7 +47,62 @@ namespace proyectoads2.Base
             }
         }
 
-        public void addAlumno(string text1, string text2)
+        public void GetDatosSecre(Usuari secre)
+        {
+            try
+            {
+                sql = "SELECT  usuario.usuario, usuario.id_cargo, "
+                + " cargo.cargo"
+                + " FROM  usuario INNER JOIN"
+                + " cargo ON usuario.id_cargo = cargo.id_cargo"
+                + " WHERE usuario.id_cargo = 1 ";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);                
+                adap = Comando.ExecuteReader();
+                if (adap.Read())
+                {
+                    secre.Usuario = adap.GetValue(0).ToString();
+                    secre.Id_cargo = Convert.ToInt32(adap.GetValue(1));                    
+                    secre.Cargo = adap.GetValue(2).ToString();
+                    secre.Id_user = "1";
+                    conn.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        public void UpdateUser(Usuari usuario)
+        {
+            try
+            {                
+                sql = "update usuario set password = sha2(?1,256), correo = ?2,"
+                    + " correo_destion = ?3, pcorreo = ?4 "
+                    + " where id_user = ?5";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                Comando.Parameters.Add(new MySqlParameter("?1", usuario.Contra));
+                Comando.Parameters.Add(new MySqlParameter("?2", usuario.Correo));
+                Comando.Parameters.Add(new MySqlParameter("?3", usuario.Correo_destino));
+                Comando.Parameters.Add(new MySqlParameter("?4", usuario.Contracorreo));
+                Comando.Parameters.Add(new MySqlParameter("?5", usuario.Id_user));
+                Comando.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Sus datos han sido actualizados Correctamente!!");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        public void AddAlumno(string text1, string text2)
         {
             try
             {
@@ -88,7 +143,7 @@ namespace proyectoads2.Base
             }
         }
 
-        public bool exitsAlumno(string text)
+        public bool ExitsAlumno(string text)
         {
             try
             {
@@ -117,7 +172,7 @@ namespace proyectoads2.Base
             }
         }
 
-        public void verVendidos(DataGridView dGVencidos)
+        public void VerVendidos(DataGridView dGVencidos)
         {
             try
             {
@@ -140,7 +195,7 @@ namespace proyectoads2.Base
             }
         }
 
-        internal void eliminarVencidos()
+        internal void EliminarVencidos()
         {
             try
             {
@@ -159,7 +214,7 @@ namespace proyectoads2.Base
             }
         }
 
-        public void verinventario(DataGridView tabDatos)
+        public void VerInventario(DataGridView tabDatos)
         {
             try
             {
@@ -184,7 +239,7 @@ namespace proyectoads2.Base
 
         
 
-        internal bool exist(string user, string pass, Datos.Usuari usuario)
+        internal bool Exist(string user, string pass, Datos.Usuari usuario)
         {
             sql = "select * from usuario where usuario = ? and password = sha2(?,256)";
             conn.Open();
@@ -195,6 +250,7 @@ namespace proyectoads2.Base
             if (adap.Read())
             {
                 usuario.Id_user = adap.GetValue(0).ToString();
+                usuario.Contra = pass;
                 conn.Close();
                 return true;
             }
@@ -206,7 +262,7 @@ namespace proyectoads2.Base
             }
         }
 
-        internal int getLastIDInv()
+        internal int GetLastIDInv()
         {
             try
             {
@@ -257,12 +313,12 @@ namespace proyectoads2.Base
             }
         }
 
-        internal void getDatos(Usuari usuario)
+        internal void GetDatos(Usuari usuario)
         {
             try
             {
                 sql = "SELECT  usuario.usuario, usuario.id_cargo, usuario.correo,"
-                + " usuario.correo_destion, cargo.cargo"
+                + " usuario.correo_destion, cargo.cargo, usuario.pcorreo"
                 + " FROM  usuario INNER JOIN"
                 + " cargo ON usuario.id_cargo = cargo.id_cargo"
                 + " WHERE id_user = ? ";
@@ -277,6 +333,7 @@ namespace proyectoads2.Base
                     usuario.Correo = adap.GetValue(2).ToString();
                     usuario.Correo_destino = adap.GetValue(3).ToString();
                     usuario.Cargo = adap.GetValue(4).ToString();
+                    usuario.Contracorreo = adap.GetValue(5).ToString();                    
                     conn.Close();
                 }
             }

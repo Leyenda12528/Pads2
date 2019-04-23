@@ -18,14 +18,14 @@ namespace proyectoads2
         public ingresaralumno()
         {
             InitializeComponent();            
-            consul.seeAlumnos(DGVAlumnos);            
+            consul.SeeAlumnos(DGVAlumnos);            
         }
 
         private void mostrarAlumnos()
         {            
             DataTable dt = (DataTable)DGVAlumnos.DataSource;
             dt.Clear();
-            consul.seeAlumnos(DGVAlumnos);            
+            consul.SeeAlumnos(DGVAlumnos);            
         }
 
         /// BOTONES CON IMAGENES
@@ -44,9 +44,9 @@ namespace proyectoads2
         {
             if (txtID.Text.Length > 0 && txtNombre.Text.Length > 0)
             {
-                if (consul.exitsAlumno(txtID.Text) == false)
+                if (consul.ExitsAlumno(txtID.Text) == false)
                 {
-                    consul.addAlumno(txtID.Text, txtNombre.Text);
+                    consul.AddAlumno(txtID.Text, txtNombre.Text);
                     txtID.Clear();
                     txtNombre.Clear();
                     mostrarAlumnos();
