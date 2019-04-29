@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace proyectoads2
 {
-    public partial class inventario : Form
+    public partial class Inventario : Form
     {
-        public inventario()
+        public Inventario()
         {
             InitializeComponent();
             Consultas consulta = new Consultas();

@@ -73,6 +73,11 @@ namespace proyectoads2
             Mostrar(new Correo(usuario));
         }
 
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            Mostrar(new Reportes());
+        }
+
         private void BtnExpandir_Click(object sender, EventArgs e)
         {
             if (van == 0)
@@ -86,6 +91,8 @@ namespace proyectoads2
                 van = 0;
             }
         }
+        //*     BOTONES CON IMAGENES
+        //*
         private void BtnCorreoI_Click(object sender, EventArgs e)
         {
             BtnCorreo_Click(null, null);
@@ -121,6 +128,11 @@ namespace proyectoads2
             BtnInicio_Click(null, null);
         }
 
+        private void BtnReportesI_Click(object sender, EventArgs e)
+        {
+            BtnReportes_Click(null, null);
+        }
+
         private void BtnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -134,7 +146,7 @@ namespace proyectoads2
             //Application.Exit();
         }
 
-        private int posX = 0, posY = 0;              
+        private int posX = 0, posY = 0;
 
         private void PnlBarra_MouseMove(object sender, MouseEventArgs e)
         {

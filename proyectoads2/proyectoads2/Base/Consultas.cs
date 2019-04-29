@@ -15,11 +15,36 @@ namespace proyectoads2.Base
     {
         public Consultas()
         {
-            conn = con.getConnect();
+            conn = con.GetConnect();
         }
         private Conexion con = new Conexion();
         private String sql;
         private MySqlCommand Comando = null;
+
+        public void Restantes(DataGridView dGVRestantes)
+        {
+            try
+            {
+                sql = "SELECT alimentos.alimento as Alimento, SUM(inventario.cantidad) as 'Cantidad Restante'"
+                    + " FROM `inventario` INNER JOIN alimentos on inventario.id_alimento = alimentos.id_alimento"
+                    + " GROUP BY inventario.id_alimento";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                adaptador = new MySqlDataAdapter(Comando);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                dGVRestantes.DataSource = dt;
+                conn.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
         private MySqlConnection conn = null;
         private MySqlDataReader adap = null;
         private MySqlDataAdapter adaptador = null;
@@ -234,7 +259,6 @@ namespace proyectoads2.Base
                 conn.Close();
                 throw;
             }
-            
         }
 
         
@@ -284,13 +308,13 @@ namespace proyectoads2.Base
             }
         }
 
-        internal void AddInventario(List<Inventario> listInventario)
+        internal void AddInventario(List<Datos.Inventario> listInventario)
         {
             try
             {
-                foreach (Inventario item in listInventario)
+                foreach (Datos.Inventario item in listInventario)
                 {
-                    Inventario inv2 = new Inventario();
+                    Datos.Inventario inv2 = new Datos.Inventario();
                     inv2 = item;
                     sql = "insert into inventario values (?1, ?2, ?3, ?4, ?5)";
                     conn.Open();

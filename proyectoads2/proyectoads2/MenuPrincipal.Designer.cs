@@ -44,8 +44,8 @@
             this.btnInicio = new System.Windows.Forms.Button();
             this.btnInicioI = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.BtnReportes = new System.Windows.Forms.Button();
+            this.BtnReportesI = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnAlumnos = new System.Windows.Forms.Button();
             this.btnAlumnosI = new Bunifu.Framework.UI.BunifuImageButton();
@@ -69,7 +69,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicioI)).BeginInit();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnReportesI)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAlumnosI)).BeginInit();
             this.panel7.SuspendLayout();
@@ -91,7 +91,7 @@
             this.PnlBarra.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlBarra.Location = new System.Drawing.Point(0, 0);
             this.PnlBarra.Name = "PnlBarra";
-            this.PnlBarra.Size = new System.Drawing.Size(799, 44);
+            this.PnlBarra.Size = new System.Drawing.Size(816, 44);
             this.PnlBarra.TabIndex = 0;
             this.PnlBarra.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PnlBarra_MouseMove);
             // 
@@ -102,7 +102,7 @@
             this.btnMinimizar.ErrorImage = global::proyectoads2.Properties.Resources.icons8_cerrar_ventana_50;
             this.btnMinimizar.Image = global::proyectoads2.Properties.Resources.icons8_minimizar_la_ventana_50;
             this.btnMinimizar.ImageActive = null;
-            this.btnMinimizar.Location = new System.Drawing.Point(725, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(742, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(37, 44);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -118,7 +118,7 @@
             this.btnCerrar.ErrorImage = global::proyectoads2.Properties.Resources.icons8_cerrar_ventana_50;
             this.btnCerrar.Image = global::proyectoads2.Properties.Resources.icons8_apagar_50;
             this.btnCerrar.ImageActive = null;
-            this.btnCerrar.Location = new System.Drawing.Point(762, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(779, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(37, 44);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -171,7 +171,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 44);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(799, 414);
+            this.panel2.Size = new System.Drawing.Size(816, 414);
             this.panel2.TabIndex = 1;
             // 
             // PnlContenedor
@@ -182,7 +182,7 @@
             this.PnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlContenedor.Location = new System.Drawing.Point(161, 0);
             this.PnlContenedor.Name = "PnlContenedor";
-            this.PnlContenedor.Size = new System.Drawing.Size(638, 414);
+            this.PnlContenedor.Size = new System.Drawing.Size(655, 414);
             this.PnlContenedor.TabIndex = 5;
             // 
             // pnlMenu
@@ -281,40 +281,42 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.button6);
-            this.panel9.Controls.Add(this.bunifuImageButton4);
+            this.panel9.Controls.Add(this.BtnReportes);
+            this.panel9.Controls.Add(this.BtnReportesI);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 176);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(161, 44);
             this.panel9.TabIndex = 10;
             // 
-            // button6
+            // BtnReportes
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(37, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(124, 44);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Reportes";
-            this.button6.UseVisualStyleBackColor = true;
+            this.BtnReportes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReportes.Location = new System.Drawing.Point(37, 0);
+            this.BtnReportes.Name = "BtnReportes";
+            this.BtnReportes.Size = new System.Drawing.Size(124, 44);
+            this.BtnReportes.TabIndex = 11;
+            this.BtnReportes.Text = "Reportes";
+            this.BtnReportes.UseVisualStyleBackColor = true;
+            this.BtnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
             // 
-            // bunifuImageButton4
+            // BtnReportesI
             // 
-            this.bunifuImageButton4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bunifuImageButton4.ErrorImage = global::proyectoads2.Properties.Resources.icons8_cerrar_ventana_50;
-            this.bunifuImageButton4.Image = global::proyectoads2.Properties.Resources.icons8_reporte_de_negocios_64;
-            this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Location = new System.Drawing.Point(0, 0);
-            this.bunifuImageButton4.Name = "bunifuImageButton4";
-            this.bunifuImageButton4.Size = new System.Drawing.Size(37, 44);
-            this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton4.TabIndex = 10;
-            this.bunifuImageButton4.TabStop = false;
-            this.bunifuImageButton4.Zoom = 10;
+            this.BtnReportesI.BackColor = System.Drawing.Color.Transparent;
+            this.BtnReportesI.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnReportesI.ErrorImage = global::proyectoads2.Properties.Resources.icons8_cerrar_ventana_50;
+            this.BtnReportesI.Image = global::proyectoads2.Properties.Resources.icons8_reporte_de_negocios_64;
+            this.BtnReportesI.ImageActive = null;
+            this.BtnReportesI.Location = new System.Drawing.Point(0, 0);
+            this.BtnReportesI.Name = "BtnReportesI";
+            this.BtnReportesI.Size = new System.Drawing.Size(37, 44);
+            this.BtnReportesI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnReportesI.TabIndex = 10;
+            this.BtnReportesI.TabStop = false;
+            this.BtnReportesI.Zoom = 10;
+            this.BtnReportesI.Click += new System.EventHandler(this.BtnReportesI_Click);
             // 
             // panel8
             // 
@@ -476,7 +478,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 458);
+            this.ClientSize = new System.Drawing.Size(816, 458);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.PnlBarra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -495,7 +497,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnInicioI)).EndInit();
             this.panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnReportesI)).EndInit();
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnAlumnosI)).EndInit();
             this.panel7.ResumeLayout(false);
@@ -521,8 +523,8 @@
         private Bunifu.Framework.UI.BunifuImageButton btnAlimentosI;
         private System.Windows.Forms.Button btnAlimentos;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button button6;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
+        private System.Windows.Forms.Button BtnReportes;
+        private Bunifu.Framework.UI.BunifuImageButton BtnReportesI;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btnAlumnos;
         private Bunifu.Framework.UI.BunifuImageButton btnAlumnosI;

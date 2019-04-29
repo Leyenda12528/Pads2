@@ -283,6 +283,16 @@ namespace proyectoads2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_ms_excel_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ms-excel-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_niño_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-niño-16", resourceCulture);
@@ -316,6 +326,16 @@ namespace proyectoads2.Properties {
         internal static System.Drawing.Bitmap icons8_ordenar_por_fecha_de_cierre_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-ordenar-por-fecha-de-cierre-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pdf_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pdf-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

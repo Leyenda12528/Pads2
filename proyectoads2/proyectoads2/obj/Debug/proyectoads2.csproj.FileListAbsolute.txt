@@ -86,3 +86,4 @@ C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\obj\Debug\proyectoads
 C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\obj\Debug\proyectoads2.csproj.GenerateResource.Cache
 C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\bin\Debug\MySql.Data.dll
 C:\Users\jorge\Desktop\proyecto ads2\proyectoads2\proyectoads2\obj\Debug\proyectoads2.Opcuser.resources
+C:\Users\jorge\Desktop\proyecto ads2\proyectoads2\proyectoads2\obj\Debug\proyectoads2.Reportes.resources

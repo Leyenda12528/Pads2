@@ -45,17 +45,17 @@ namespace proyectoads2
                                     if (h.ExitsFecha(txtFbebida.Text) && h.DateMaxNow(txtFbebida.Text))
                                     {
                                         Consultas cons = new Consultas();
-                                        List<Inventario> ListInventario = new List<Inventario>();
+                                        List<Datos.Inventario> ListInventario = new List<Datos.Inventario>();
                                         int v = cons.GetLastIDInv();
                                         FechaActual = Convert.ToDateTime(DateTime.Now).ToString("dd/MM/yyyy");
                                         int bandera = 4;
                                         int d = 0;
-                                        Inventario invent = null;
+                                        Datos.Inventario invent = null;
                                         foreach (Control item in alimentospanel.Controls)
                                         {
                                             if (d == 0)
                                             {
-                                                invent = new Inventario();
+                                                invent = new Datos.Inventario();
                                                 invent.Id_inventario = v;
                                                 invent.Id_alimento = bandera;
                                                 invent.Fecha_ingreso = FechaActual;

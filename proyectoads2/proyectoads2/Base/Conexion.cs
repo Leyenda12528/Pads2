@@ -16,30 +16,30 @@ namespace proyectoads2.Base
         public Conexion() {
             
         }
-        public MySqlConnection getConnect() {            
+        public MySqlConnection GetConnect() {            
             return con;
         }
 
-        public void consulta(String sql) {
-            try
-            {
-                if (con.State == ConnectionState.Closed)                
-                    con.Open();
+        //public void consulta(String sql) {
+        //    try
+        //    {
+        //        if (con.State == ConnectionState.Closed)                
+        //            con.Open();
                 
-                MySqlCommand consul = new MySqlCommand(sql, con);
-                MySqlDataReader adap = consul.ExecuteReader();
-                String mjs = "";
-                while (adap.Read())
-                {
-                    //mjs = "ID " + adap.GetValue(0).ToString() + "\nCargo {1}" + adap.GetValue(1).ToString();
-                    //MessageBox.Show(mjs);
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e+"");
-            }
-        }
+        //        MySqlCommand consul = new MySqlCommand(sql, con);
+        //        MySqlDataReader adap = consul.ExecuteReader();
+        //        String mjs = "";
+        //        while (adap.Read())
+        //        {
+        //            //mjs = "ID " + adap.GetValue(0).ToString() + "\nCargo {1}" + adap.GetValue(1).ToString();
+        //            //MessageBox.Show(mjs);
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        MessageBox.Show(e+"");
+        //    }
+        //}
 
         public void Cerrar() {
             con.Close();

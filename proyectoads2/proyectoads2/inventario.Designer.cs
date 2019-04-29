@@ -1,6 +1,6 @@
 ﻿namespace proyectoads2
 {
-    partial class inventario
+    partial class Inventario
     {
         /// <summary>
         /// Required designer variable.

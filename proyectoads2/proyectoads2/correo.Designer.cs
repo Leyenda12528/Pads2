@@ -30,11 +30,11 @@
         {
             this.TxtMjs = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnEntregarI = new Bunifu.Framework.UI.BunifuImageButton();
             this.BtnEntregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtAsunto = new System.Windows.Forms.TextBox();
-            this.BtnEntregarI = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnEntregarI)).BeginInit();
             this.SuspendLayout();
@@ -55,8 +55,24 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 343);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(762, 41);
+            this.panel2.Size = new System.Drawing.Size(779, 41);
             this.panel2.TabIndex = 6;
+            // 
+            // BtnEntregarI
+            // 
+            this.BtnEntregarI.BackColor = System.Drawing.Color.Transparent;
+            this.BtnEntregarI.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnEntregarI.ErrorImage = global::proyectoads2.Properties.Resources.icons8_cerrar_ventana_50;
+            this.BtnEntregarI.Image = global::proyectoads2.Properties.Resources.icons8_nuevo_post_64;
+            this.BtnEntregarI.ImageActive = null;
+            this.BtnEntregarI.Location = new System.Drawing.Point(682, 0);
+            this.BtnEntregarI.Name = "BtnEntregarI";
+            this.BtnEntregarI.Size = new System.Drawing.Size(97, 41);
+            this.BtnEntregarI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnEntregarI.TabIndex = 16;
+            this.BtnEntregarI.TabStop = false;
+            this.BtnEntregarI.Zoom = 10;
+            this.BtnEntregarI.Click += new System.EventHandler(this.BtnEntregarI_Click);
             // 
             // BtnEntregar
             // 
@@ -65,7 +81,7 @@
             this.BtnEntregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.BtnEntregar.Location = new System.Drawing.Point(0, 0);
             this.BtnEntregar.Name = "BtnEntregar";
-            this.BtnEntregar.Size = new System.Drawing.Size(665, 41);
+            this.BtnEntregar.Size = new System.Drawing.Size(676, 41);
             this.BtnEntregar.TabIndex = 5;
             this.BtnEntregar.Text = "Enviar Petición";
             this.BtnEntregar.UseVisualStyleBackColor = true;
@@ -99,27 +115,11 @@
             this.TxtAsunto.Size = new System.Drawing.Size(516, 24);
             this.TxtAsunto.TabIndex = 9;
             // 
-            // BtnEntregarI
-            // 
-            this.BtnEntregarI.BackColor = System.Drawing.Color.Transparent;
-            this.BtnEntregarI.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnEntregarI.ErrorImage = global::proyectoads2.Properties.Resources.icons8_cerrar_ventana_50;
-            this.BtnEntregarI.Image = global::proyectoads2.Properties.Resources.icons8_nuevo_post_64;
-            this.BtnEntregarI.ImageActive = null;
-            this.BtnEntregarI.Location = new System.Drawing.Point(665, 0);
-            this.BtnEntregarI.Name = "BtnEntregarI";
-            this.BtnEntregarI.Size = new System.Drawing.Size(97, 41);
-            this.BtnEntregarI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnEntregarI.TabIndex = 16;
-            this.BtnEntregarI.TabStop = false;
-            this.BtnEntregarI.Zoom = 10;
-            this.BtnEntregarI.Click += new System.EventHandler(this.BtnEntregarI_Click);
-            // 
             // Correo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 384);
+            this.ClientSize = new System.Drawing.Size(779, 384);
             this.Controls.Add(this.TxtAsunto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

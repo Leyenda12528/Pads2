@@ -78,7 +78,7 @@ namespace proyectoads2
 
         private void btnVerInventario_Click(object sender, EventArgs e)
         {
-            mostrar(new inventario());
+            mostrar(new Inventario());
         }
     }
 }
