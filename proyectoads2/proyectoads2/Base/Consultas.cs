@@ -21,6 +21,211 @@ namespace proyectoads2.Base
         private String sql;
         private MySqlCommand Comando = null;
 
+        internal void listud(ComboBox estudiante)
+        {
+            try
+            {
+                sql = "SELECT id_alumno FROM uniforme";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                adap = Comando.ExecuteReader();
+                while (adap.Read())
+                {
+                    estudiante.Items.Add(adap.GetValue(0).ToString());
+
+
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        internal void newplanif(Panel panelarroz, int v)
+        {
+            int d=0, d1=0, d2=0, d3=0, d4=0;
+            int i =0;
+            foreach (Control item in panelarroz.Controls)
+            {
+                if (i == 0) d = (item.Text.Length > 0) ? Convert.ToInt32(item.Text) : 0;
+                else if (i == 1) d1 = (item.Text.Length > 0) ? Convert.ToInt32(item.Text) : 0;
+                else if (i == 2) d2 = (item.Text.Length > 0) ? Convert.ToInt32(item.Text) : 0;
+                else if (i == 3) d3 = (item.Text.Length > 0) ? Convert.ToInt32(item.Text) : 0;
+                else d4 = (item.Text.Length > 0) ? Convert.ToInt32(item.Text) : 0;
+                i++;
+            }
+            try
+            {
+                sql = "update planificacion" 
+                +" set lunes = ?1,martes = ?2,miercoles = ?3,jueves = ?4,viernes = ?5"
+                +" where id_alimento = ?6";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                Comando.Parameters.Add(new MySqlParameter("?1", d));
+                Comando.Parameters.Add(new MySqlParameter("?2", d1));
+                Comando.Parameters.Add(new MySqlParameter("?3", d2));
+                Comando.Parameters.Add(new MySqlParameter("?4", d3));
+                Comando.Parameters.Add(new MySqlParameter("?5", d4));
+                Comando.Parameters.Add(new MySqlParameter("?6", v));
+                Comando.ExecuteNonQuery();
+                conn.Close();
+                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        internal void listud2(ComboBox estudiante)
+        {
+            try
+            {
+                sql = "SELECT id_alumno FROM alumno WHERE id_estado=0";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                adap = Comando.ExecuteReader();
+                while (adap.Read())
+                {
+                    estudiante.Items.Add(adap.GetValue(0).ToString());
+                   
+                    
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        internal void mostraruniforme(DataGridView mostrarunif)
+        {
+            try
+            {
+                sql = "SELECT id_alumno, cantidad FROM uniforme";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                adaptador = new MySqlDataAdapter(Comando);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                mostrarunif.DataSource = dt;
+                conn.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        internal void actualizaruniformes(string agg, int v)
+        {
+            try
+            {
+                sql = "UPDATE uniforme SET cantidad =?1 WHERE id_alumno =?2";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                Comando.Parameters.Add(new MySqlParameter("?1", v));
+                Comando.Parameters.Add(new MySqlParameter("?2", agg));
+                Comando.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Uniforme actualizado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        internal int cantidadalumno(string agg)
+        {
+            try
+            {
+                sql = "SELECT cantidad FROM uniforme WHERE id_alumno='"+agg+"'";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                adap = Comando.ExecuteReader();
+                int conteo=0;
+                if (adap.Read())
+                {
+                    conteo = Convert.ToInt32(adap.GetValue(0).ToString());
+                    conn.Close();
+                    
+                }
+                return conteo;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+           
+        }
+
+        internal void nuevounif(string agg, int v)
+        {
+            try
+            {
+                sql = "insert into uniforme values (?1, ?2)";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                Comando.Parameters.Add(new MySqlParameter("?1", agg));
+                Comando.Parameters.Add(new MySqlParameter("?2", v));
+                Comando.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Uniforme Ingresado Correctamente!!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+
+        }
+
+        internal bool existealumno(string agg)
+        {
+            try
+            {
+                sql = "SELECT * FROM uniforme WHERE id_alumno = '"+agg+"'";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                adap = Comando.ExecuteReader();
+                if (adap.Read())
+                {
+
+                    conn.Close();
+                    return true;
+                }
+                else
+                {
+                    conn.Close();
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
         public void Restantes(DataGridView dGVRestantes)
         {
             try
@@ -363,9 +568,9 @@ namespace proyectoads2.Base
             }
             catch (Exception e)
             {
-                MessageBox.Show(e + "");
                 conn.Close();
-                throw;
+                MessageBox.Show(e + "");
+                
             }
             
         }

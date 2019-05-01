@@ -70,7 +70,6 @@ C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\obj\Debug\proyectoads
 C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\obj\Debug\proyectoads2.correo.resources
 C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\obj\Debug\proyectoads2.Entregar_uniformes.resources
 C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\obj\Debug\proyectoads2.Login.resources
-C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\obj\Debug\proyectoads2.Form2.resources
 C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\obj\Debug\proyectoads2.Ingresar_uniforme.resources
 C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\obj\Debug\proyectoads2.ingresaralumno.resources
 C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\obj\Debug\proyectoads2.ingreso_pedido.resources
@@ -87,3 +86,5 @@ C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\obj\Debug\proyectoads
 C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\bin\Debug\MySql.Data.dll
 C:\Users\jorge\Desktop\proyecto ads2\proyectoads2\proyectoads2\obj\Debug\proyectoads2.Opcuser.resources
 C:\Users\jorge\Desktop\proyecto ads2\proyectoads2\proyectoads2\obj\Debug\proyectoads2.Reportes.resources
+C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\obj\Debug\proyectoads2.Opcuser.resources
+C:\Users\Cecilia_M\Desktop\Pads2\proyectoads2\proyectoads2\obj\Debug\proyectoads2.Reportes.resources
