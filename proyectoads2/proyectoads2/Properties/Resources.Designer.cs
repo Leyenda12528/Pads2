@@ -233,9 +233,39 @@ namespace proyectoads2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_jueves_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-jueves-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_lista_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-lista-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_lunes_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-lunes-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_martes_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-martes-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +296,16 @@ namespace proyectoads2.Properties {
         internal static System.Drawing.Bitmap icons8_menú_filled_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-menú-filled-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_miércoles_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-miércoles-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -386,6 +426,16 @@ namespace proyectoads2.Properties {
         internal static System.Drawing.Bitmap icons8_verificar_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-verificar-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_viernes_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-viernes-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

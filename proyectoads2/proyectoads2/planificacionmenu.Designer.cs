@@ -1,6 +1,6 @@
 ﻿namespace proyectoads2
 {
-    partial class planificacionmenu
+    partial class PlanificacionMenu
     {
         /// <summary>
         /// Required designer variable.

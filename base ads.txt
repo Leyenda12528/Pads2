@@ -238,7 +238,29 @@ FROM `inventario` INNER JOIN alimentos ON inventario.id_alimento = alimentos.id_
 INSERT INTO usuario VALUES(1,'secre',sha2('123',256),1,'','','');
 
 
+create table planificacion
+(
+id_alimento int,
+lunes int,
+martes int,
+miercoles int,
+jueves int,
+viernes int,
+constraint foreign key (id_alimento) references alimentos(id_alimento)
+)
 
+insert into planificacion values (0,0,0,0,0,0),
+(1,0,0,0,0,0),(2,0,0,0,0,0),(3,0,0,0,0,0),
+(4,0,0,0,0,0);
+
+update planificaion 
+set lunes = ?1,martes = ?2,miercoles = ?3,jueves = ?4,viernes = ?5
+where id_alimento = ?6
+
+= (item.Text.Length>0) ? Convert.toInt32(item.Text) : 0;
+
+if (item.Text.Length>0)
+{}
 
 
 

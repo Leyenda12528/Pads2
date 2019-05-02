@@ -45,7 +45,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(12, 26);
+            this.label1.Location = new System.Drawing.Point(30, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 20);
             this.label1.TabIndex = 1;
@@ -53,9 +53,13 @@
             // 
             // dtguniformes
             // 
+            this.dtguniformes.AllowUserToAddRows = false;
+            this.dtguniformes.AllowUserToDeleteRows = false;
             this.dtguniformes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtguniformes.Location = new System.Drawing.Point(192, 12);
             this.dtguniformes.Name = "dtguniformes";
+            this.dtguniformes.ReadOnly = true;
+            this.dtguniformes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtguniformes.Size = new System.Drawing.Size(376, 173);
             this.dtguniformes.TabIndex = 6;
             // 
@@ -112,7 +116,7 @@
             // 
             this.estudiante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.estudiante.FormattingEnabled = true;
-            this.estudiante.Location = new System.Drawing.Point(15, 59);
+            this.estudiante.Location = new System.Drawing.Point(34, 105);
             this.estudiante.Name = "estudiante";
             this.estudiante.Size = new System.Drawing.Size(121, 28);
             this.estudiante.TabIndex = 9;

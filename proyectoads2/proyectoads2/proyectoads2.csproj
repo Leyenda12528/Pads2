@@ -68,6 +68,7 @@
       <DependentUpon>Correo.cs</DependentUpon>
     </Compile>
     <Compile Include="Datos\Inventario.cs" />
+    <Compile Include="Datos\Semanal.cs" />
     <Compile Include="Datos\Usuari.cs" />
     <Compile Include="Entregar uniformes.cs">
       <SubType>Form</SubType>
@@ -87,11 +88,11 @@
     <Compile Include="Ingresar uniforme.Designer.cs">
       <DependentUpon>Ingresar uniforme.cs</DependentUpon>
     </Compile>
-    <Compile Include="ingresaralumno.cs">
+    <Compile Include="Ingresaralumno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ingresaralumno.Designer.cs">
-      <DependentUpon>ingresaralumno.cs</DependentUpon>
+    <Compile Include="Ingresaralumno.Designer.cs">
+      <DependentUpon>Ingresaralumno.cs</DependentUpon>
     </Compile>
     <Compile Include="ingreso pedido.cs">
       <SubType>Form</SubType>
@@ -105,11 +106,11 @@
     <Compile Include="Inventario.Designer.cs">
       <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
-    <Compile Include="menu semanal.cs">
+    <Compile Include="MenuSemanal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="menu semanal.Designer.cs">
-      <DependentUpon>menu semanal.cs</DependentUpon>
+    <Compile Include="MenuSemanal.Designer.cs">
+      <DependentUpon>MenuSemanal.cs</DependentUpon>
     </Compile>
     <Compile Include="Menualimentos.cs">
       <SubType>Form</SubType>
@@ -129,11 +130,11 @@
     <Compile Include="Opcuser.Designer.cs">
       <DependentUpon>Opcuser.cs</DependentUpon>
     </Compile>
-    <Compile Include="planificacionmenu.cs">
+    <Compile Include="PlanificacionMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="planificacionmenu.Designer.cs">
-      <DependentUpon>planificacionmenu.cs</DependentUpon>
+    <Compile Include="PlanificacionMenu.Designer.cs">
+      <DependentUpon>PlanificacionMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -173,8 +174,8 @@
     <EmbeddedResource Include="Ingresar uniforme.resx">
       <DependentUpon>Ingresar uniforme.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ingresaralumno.resx">
-      <DependentUpon>ingresaralumno.cs</DependentUpon>
+    <EmbeddedResource Include="Ingresaralumno.resx">
+      <DependentUpon>Ingresaralumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ingreso pedido.resx">
       <DependentUpon>ingreso pedido.cs</DependentUpon>
@@ -182,8 +183,8 @@
     <EmbeddedResource Include="Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="menu semanal.resx">
-      <DependentUpon>menu semanal.cs</DependentUpon>
+    <EmbeddedResource Include="MenuSemanal.resx">
+      <DependentUpon>MenuSemanal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menualimentos.resx">
       <DependentUpon>Menualimentos.cs</DependentUpon>
@@ -194,8 +195,8 @@
     <EmbeddedResource Include="Opcuser.resx">
       <DependentUpon>Opcuser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="planificacionmenu.resx">
-      <DependentUpon>planificacionmenu.cs</DependentUpon>
+    <EmbeddedResource Include="PlanificacionMenu.resx">
+      <DependentUpon>PlanificacionMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -339,6 +340,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-pdf-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lunes-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-martes-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-miércoles-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-jueves-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-viernes-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

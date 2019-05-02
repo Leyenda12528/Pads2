@@ -19,22 +19,74 @@ namespace proyectoads2.Base
         }
         private Conexion con = new Conexion();
         private String sql;
-        private MySqlCommand Comando = null;
+        private MySqlCommand Comando = null;        
+        private MySqlConnection conn = null;
+        private MySqlDataReader adap = null;
+        private MySqlDataAdapter adaptador = null;
 
-        internal void listud(ComboBox estudiante)
+        internal int CantDia(int v1, string v2)
         {
             try
             {
-                sql = "SELECT id_alumno FROM uniforme";
+                sql = "SELECT " + v2 + " FROM planificacion where id_alimento = ?1";
                 conn.Open();
                 Comando = new MySqlCommand(sql, conn);
+                Comando.Parameters.Add(new MySqlParameter("?1", v1));
                 adap = Comando.ExecuteReader();
+                int cant = 0;
+                if (adap.Read())
+                    cant = Convert.ToInt32(adap.GetValue(0).ToString());
+                //MessageBox.Show("Consulta "+cant);
+                conn.Close();
+                return cant;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        internal void CantInv(List<Semanal> semana, int id_alimento)
+        {
+            try
+            {
+                sql = "SELECT id_inventario, cantidad FROM inventario WHERE id_alimento = ?1 and cantidad > 0";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                Comando.Parameters.Add(new MySqlParameter("?1", id_alimento));
+                adap = Comando.ExecuteReader();                
                 while (adap.Read())
                 {
-                    estudiante.Items.Add(adap.GetValue(0).ToString());
+                    Semanal sem = new Semanal();
+                    sem.ID_Inventario = Convert.ToInt32(adap.GetValue(0).ToString());
+                    sem.ID_Alimento = id_alimento;                    
+                    sem.Cantidad = Convert.ToInt32(adap.GetValue(1).ToString());                    
+                    semana.Add(sem);
+                    //MessageBox.Show("Cant Inv " + cantInv);
+                }                    
+                conn.Close();                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
 
-
-                }
+        internal void UpdatePlanificacionDia(string dia, int cantPlani, int id_alimento)
+        {
+            try
+            {
+                sql = "UPDATE planificacion SET " + dia + " = ?1 WHERE id_alimento = ?2";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                int cant = 0;
+                Comando.Parameters.Add(new MySqlParameter("?1", cantPlani));
+                Comando.Parameters.Add(new MySqlParameter("?2", id_alimento));
+                Comando.ExecuteNonQuery();
                 conn.Close();
             }
             catch (Exception e)
@@ -45,7 +97,115 @@ namespace proyectoads2.Base
             }
         }
 
-        internal void newplanif(Panel panelarroz, int v)
+        internal void UpdateInventarioPlanificacion(List<Semanal> semanaUpdate)
+        {
+            try
+            {
+                foreach (Semanal item in semanaUpdate)
+                {
+                    sql = "UPDATE inventario SET cantidad = ?1 WHERE id_inventario = ?2";
+                    conn.Open();
+                    Comando = new MySqlCommand(sql, conn);
+                    int cant = 0;
+                    Comando.Parameters.Add(new MySqlParameter("?1", item.Cantidad));
+                    Comando.Parameters.Add(new MySqlParameter("?2", item.ID_Inventario));
+                    Comando.ExecuteNonQuery();
+                    conn.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        internal void Listud(ComboBox estudiante)
+        {
+            try
+            {
+                sql = "SELECT id_alumno FROM uniforme";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                adap = Comando.ExecuteReader();
+                while (adap.Read())                
+                    estudiante.Items.Add(adap.GetValue(0).ToString());                
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        internal void UpdateInventarioToVenci(int id_Inv)
+        {
+            try
+            {
+                sql = "UPDATE inventario SET cantidad = ?1 WHERE id_inventario = ?2";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                int cant = 0;
+                Comando.Parameters.Add(new MySqlParameter("?1", cant));
+                Comando.Parameters.Add(new MySqlParameter("?2", id_Inv));
+                Comando.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        internal void UpdateVenci(int id_Alimento, int cantidad_V)
+        {
+            try
+            {
+                sql = "UPDATE vencimientos SET cantidad =?1 WHERE id_alimento =?2";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                Comando.Parameters.Add(new MySqlParameter("?1", cantidad_V));
+                Comando.Parameters.Add(new MySqlParameter("?2", id_Alimento));
+                Comando.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                conn.Close();
+                throw;
+            }
+        }
+
+        internal int CantVencido(int Id_Alimento)
+        {
+            try
+            {
+                sql = "SELECT cantidad FROM vencimientos where id_alimento= ?1";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                Comando.Parameters.Add(new MySqlParameter("?1", Id_Alimento));
+                adap = Comando.ExecuteReader();
+                int cant = 0;
+                while (adap.Read())
+                    cant = Convert.ToInt32(adap.GetValue(0).ToString());
+                conn.Close();
+                return cant;
+            }
+            catch (Exception e)
+            {
+                conn.Close();
+                MessageBox.Show(e + "");                
+                throw;
+            }
+        }
+
+        internal void Newplanif(Panel panelarroz, int v)
         {
             int d=0, d1=0, d2=0, d3=0, d4=0;
             int i =0;
@@ -72,8 +232,7 @@ namespace proyectoads2.Base
                 Comando.Parameters.Add(new MySqlParameter("?5", d4));
                 Comando.Parameters.Add(new MySqlParameter("?6", v));
                 Comando.ExecuteNonQuery();
-                conn.Close();
-                
+                conn.Close();                
             }
             catch (Exception e)
             {
@@ -83,7 +242,45 @@ namespace proyectoads2.Base
             }
         }
 
-        internal void listud2(ComboBox estudiante)
+        public void VerPlanificacion(Panel PanelD, int id_alimento)
+        {
+            try
+            {
+                String d = "", d1 = "", d2 = "", d3 = "", d4 = "";
+                int i = 0;
+                sql = "SELECT * FROM planificacion where id_alimento = ?1";
+                conn.Open();
+                Comando = new MySqlCommand(sql, conn);
+                Comando.Parameters.Add(new MySqlParameter("?1", id_alimento));
+                adap = Comando.ExecuteReader();
+                while (adap.Read())
+                {
+                    d = adap.GetValue(1).ToString();
+                    d1 = adap.GetValue(2).ToString();
+                    d2 = adap.GetValue(3).ToString();
+                    d3 = adap.GetValue(4).ToString();
+                    d4 = adap.GetValue(5).ToString();
+                }
+                conn.Close();
+                foreach (Control item in PanelD.Controls)
+                {
+                    if (i == 0) item.Text = d;
+                    else if (i == 1) item.Text = d1;
+                    else if (i == 2) item.Text = d2;
+                    else if (i == 3) item.Text = d3;
+                    else item.Text = d4;
+                    i++;
+                }
+            }
+            catch (Exception e)
+            {
+                conn.Close();
+                MessageBox.Show(e + "");                
+                throw;
+            }
+        }
+
+        internal void Listud2(ComboBox estudiante)
         {
             try
             {
@@ -91,12 +288,8 @@ namespace proyectoads2.Base
                 conn.Open();
                 Comando = new MySqlCommand(sql, conn);
                 adap = Comando.ExecuteReader();
-                while (adap.Read())
-                {
-                    estudiante.Items.Add(adap.GetValue(0).ToString());
-                   
-                    
-                }
+                while (adap.Read())                
+                    estudiante.Items.Add(adap.GetValue(0).ToString());                 
                 conn.Close();
             }
             catch (Exception e)
@@ -107,7 +300,7 @@ namespace proyectoads2.Base
             }
         }
 
-        internal void mostraruniforme(DataGridView mostrarunif)
+        internal void Mostraruniforme(DataGridView mostrarunif)
         {
             try
             {
@@ -119,7 +312,6 @@ namespace proyectoads2.Base
                 adaptador.Fill(dt);
                 mostrarunif.DataSource = dt;
                 conn.Close();
-
             }
             catch (Exception e)
             {
@@ -129,7 +321,7 @@ namespace proyectoads2.Base
             }
         }
 
-        internal void actualizaruniformes(string agg, int v)
+        internal void Actualizaruniformes(string agg, int v)
         {
             try
             {
@@ -150,7 +342,7 @@ namespace proyectoads2.Base
             }
         }
 
-        internal int cantidadalumno(string agg)
+        internal int Cantidadalumno(string agg)
         {
             try
             {
@@ -162,8 +354,7 @@ namespace proyectoads2.Base
                 if (adap.Read())
                 {
                     conteo = Convert.ToInt32(adap.GetValue(0).ToString());
-                    conn.Close();
-                    
+                    conn.Close();                    
                 }
                 return conteo;
             }
@@ -176,7 +367,7 @@ namespace proyectoads2.Base
            
         }
 
-        internal void nuevounif(string agg, int v)
+        internal void Nuevounif(string agg, int v)
         {
             try
             {
@@ -198,7 +389,7 @@ namespace proyectoads2.Base
 
         }
 
-        internal bool existealumno(string agg)
+        internal bool Existealumno(string agg)
         {
             try
             {
@@ -206,17 +397,13 @@ namespace proyectoads2.Base
                 conn.Open();
                 Comando = new MySqlCommand(sql, conn);
                 adap = Comando.ExecuteReader();
+                bool dato = false;
                 if (adap.Read())
-                {
-
-                    conn.Close();
-                    return true;
-                }
+                    dato = true;                 
                 else
-                {
-                    conn.Close();
-                    return false;
-                }
+                    dato = false;                 
+                conn.Close();
+                return dato;
             }
             catch (Exception e)
             {
@@ -240,7 +427,6 @@ namespace proyectoads2.Base
                 adaptador.Fill(dt);
                 dGVRestantes.DataSource = dt;
                 conn.Close();
-
             }
             catch (Exception e)
             {
@@ -249,11 +435,7 @@ namespace proyectoads2.Base
                 throw;
             }
         }
-
-        private MySqlConnection conn = null;
-        private MySqlDataReader adap = null;
-        private MySqlDataAdapter adaptador = null;
-
+        
         internal void SeeAlumnos(DataGridView dGVAlumnos)
         {
             try
@@ -267,7 +449,6 @@ namespace proyectoads2.Base
                 adaptador.Fill(dt);
                 dGVAlumnos.DataSource = dt;
                 conn.Close();
-
             }
             catch (Exception e)
             {
@@ -382,17 +563,13 @@ namespace proyectoads2.Base
                 Comando = new MySqlCommand(sql, conn);
                 Comando.Parameters.Add(new MySqlParameter("id_alumno", text));                
                 adap = Comando.ExecuteReader();
+                bool dato = false;
                 if (adap.Read())
-                {
-                    conn.Close();
-                    return true;
-                }
+                    dato = true;
                 else
-                {                    
-                    conn.Close();
-                    return false;
-                }
-
+                    dato = false;
+                conn.Close();
+                return dato;
             }
             catch (Exception e)
             {
@@ -415,7 +592,6 @@ namespace proyectoads2.Base
                 adaptador.Fill(dt);
                 dGVencidos.DataSource = dt;
                 conn.Close();
-
             }
             catch (Exception e)
             {
@@ -456,7 +632,6 @@ namespace proyectoads2.Base
                 adaptador.Fill(dt);
                 tabDatos.DataSource = dt;
                 conn.Close();
-
             }
             catch (Exception e)
             {

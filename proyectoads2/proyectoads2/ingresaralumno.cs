@@ -11,17 +11,17 @@ using System.Windows.Forms;
 
 namespace proyectoads2
 {
-    public partial class ingresaralumno : Form
+    public partial class Ingresaralumno : Form
     {
         private Consultas consul = new Consultas();
         private String IDselect;
-        public ingresaralumno()
+        public Ingresaralumno()
         {
             InitializeComponent();            
             consul.SeeAlumnos(DGVAlumnos);            
         }
 
-        private void mostrarAlumnos()
+        private void MostrarAlumnos()
         {            
             DataTable dt = (DataTable)DGVAlumnos.DataSource;
             dt.Clear();
@@ -29,18 +29,18 @@ namespace proyectoads2
         }
 
         /// BOTONES CON IMAGENES
-        private void btnBajaI_Click(object sender, EventArgs e)
+        private void BtnBajaI_Click(object sender, EventArgs e)
         {
-            btnBaja_Click(null,null);
+            BtnBaja_Click(null,null);
         }
 
-        private void btnIngresarI_Click(object sender, EventArgs e)
+        private void BtnIngresarI_Click(object sender, EventArgs e)
         {
-            btnIngresar_Click(null, null);
+            BtnIngresar_Click(null, null);
         }
         ///
 
-        private void btnIngresar_Click(object sender, EventArgs e)
+        private void BtnIngresar_Click(object sender, EventArgs e)
         {
             if (txtID.Text.Length > 0 && txtNombre.Text.Length > 0)
             {
@@ -49,27 +49,27 @@ namespace proyectoads2
                     consul.AddAlumno(txtID.Text, txtNombre.Text);
                     txtID.Clear();
                     txtNombre.Clear();
-                    mostrarAlumnos();
+                    MostrarAlumnos();
                 }
                 else MessageBox.Show("ERROR\n\nYa existe un Alumno con ese ID ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else MessageBox.Show("ERROR\n\nCampos Vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void btnBaja_Click(object sender, EventArgs e)
+        private void BtnBaja_Click(object sender, EventArgs e)
         {
             if (IDselect.Length > 0)
             {
                 if (MessageBox.Show("Desea dar de baja al Alumno con ID: " + IDselect, "Dar de Baja", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     consul.BajarAlumno(IDselect);
-                    mostrarAlumnos();
+                    MostrarAlumnos();
                 }
             }
             else MessageBox.Show("Seleccione un Alumno", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar) || Char.IsControl(e.KeyChar) || Char.IsSeparator(e.KeyChar))
                 e.Handled = false;

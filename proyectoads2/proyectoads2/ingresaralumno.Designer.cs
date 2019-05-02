@@ -1,6 +1,6 @@
 ﻿namespace proyectoads2
 {
-    partial class ingresaralumno
+    partial class Ingresaralumno
     {
         /// <summary>
         /// Required designer variable.
@@ -81,7 +81,7 @@
             this.txtNombre.Size = new System.Drawing.Size(225, 26);
             this.txtNombre.TabIndex = 2;
             this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox2_KeyPress);
             // 
             // label2
             // 
@@ -141,7 +141,7 @@
             this.btnIngresarI.TabIndex = 14;
             this.btnIngresarI.TabStop = false;
             this.btnIngresarI.Zoom = 10;
-            this.btnIngresarI.Click += new System.EventHandler(this.btnIngresarI_Click);
+            this.btnIngresarI.Click += new System.EventHandler(this.BtnIngresarI_Click);
             // 
             // btnIngresar
             // 
@@ -154,7 +154,7 @@
             this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            this.btnIngresar.Click += new System.EventHandler(this.BtnIngresar_Click);
             // 
             // panel2
             // 
@@ -180,7 +180,7 @@
             this.btnBajaI.TabIndex = 15;
             this.btnBajaI.TabStop = false;
             this.btnBajaI.Zoom = 10;
-            this.btnBajaI.Click += new System.EventHandler(this.btnBajaI_Click);
+            this.btnBajaI.Click += new System.EventHandler(this.BtnBajaI_Click);
             // 
             // btnBaja
             // 
@@ -193,7 +193,7 @@
             this.btnBaja.TabIndex = 7;
             this.btnBaja.Text = "Dar de baja";
             this.btnBaja.UseVisualStyleBackColor = true;
-            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
+            this.btnBaja.Click += new System.EventHandler(this.BtnBaja_Click);
             // 
             // panel4
             // 

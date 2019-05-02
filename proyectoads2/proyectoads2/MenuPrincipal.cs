@@ -65,7 +65,7 @@ namespace proyectoads2
 
         private void BtnAlumnos_Click(object sender, EventArgs e)
         {
-            Mostrar(new ingresaralumno());
+            Mostrar(new Ingresaralumno());
         }
 
         private void BtnCorreo_Click(object sender, EventArgs e)

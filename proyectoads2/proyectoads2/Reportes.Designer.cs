@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnPdf = new Bunifu.Framework.UI.BunifuTileButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.BtnExcel = new Bunifu.Framework.UI.BunifuTileButton();
             this.DGVRestantes = new System.Windows.Forms.DataGridView();
             this.DGVInventario = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.BtnExcel = new Bunifu.Framework.UI.BunifuTileButton();
-            this.BtnPdf = new Bunifu.Framework.UI.BunifuTileButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVRestantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVInventario)).BeginInit();
@@ -55,6 +55,56 @@
             this.panel1.Size = new System.Drawing.Size(186, 414);
             this.panel1.TabIndex = 9;
             // 
+            // BtnPdf
+            // 
+            this.BtnPdf.BackColor = System.Drawing.Color.Tomato;
+            this.BtnPdf.color = System.Drawing.Color.Tomato;
+            this.BtnPdf.colorActive = System.Drawing.Color.Coral;
+            this.BtnPdf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnPdf.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.BtnPdf.ForeColor = System.Drawing.Color.White;
+            this.BtnPdf.Image = global::proyectoads2.Properties.Resources.icons8_pdf_64;
+            this.BtnPdf.ImagePosition = 20;
+            this.BtnPdf.ImageZoom = 50;
+            this.BtnPdf.LabelPosition = 41;
+            this.BtnPdf.LabelText = "PDF";
+            this.BtnPdf.Location = new System.Drawing.Point(27, 237);
+            this.BtnPdf.Margin = new System.Windows.Forms.Padding(6);
+            this.BtnPdf.Name = "BtnPdf";
+            this.BtnPdf.Size = new System.Drawing.Size(144, 135);
+            this.BtnPdf.TabIndex = 15;
+            this.BtnPdf.Click += new System.EventHandler(this.BtnPdf_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(53, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 22);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Exportar";
+            // 
+            // BtnExcel
+            // 
+            this.BtnExcel.BackColor = System.Drawing.Color.LimeGreen;
+            this.BtnExcel.color = System.Drawing.Color.LimeGreen;
+            this.BtnExcel.colorActive = System.Drawing.Color.PaleGreen;
+            this.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.BtnExcel.ForeColor = System.Drawing.Color.Black;
+            this.BtnExcel.Image = global::proyectoads2.Properties.Resources.icons8_ms_excel_64;
+            this.BtnExcel.ImagePosition = 20;
+            this.BtnExcel.ImageZoom = 50;
+            this.BtnExcel.LabelPosition = 41;
+            this.BtnExcel.LabelText = "Excel";
+            this.BtnExcel.Location = new System.Drawing.Point(27, 78);
+            this.BtnExcel.Margin = new System.Windows.Forms.Padding(6);
+            this.BtnExcel.Name = "BtnExcel";
+            this.BtnExcel.Size = new System.Drawing.Size(144, 135);
+            this.BtnExcel.TabIndex = 14;
+            this.BtnExcel.Click += new System.EventHandler(this.BtnExcel_Click);
+            // 
             // DGVRestantes
             // 
             this.DGVRestantes.AllowUserToAddRows = false;
@@ -63,6 +113,7 @@
             this.DGVRestantes.Location = new System.Drawing.Point(26, 35);
             this.DGVRestantes.Name = "DGVRestantes";
             this.DGVRestantes.ReadOnly = true;
+            this.DGVRestantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVRestantes.Size = new System.Drawing.Size(250, 155);
             this.DGVRestantes.TabIndex = 10;
             // 
@@ -74,6 +125,7 @@
             this.DGVInventario.Location = new System.Drawing.Point(26, 225);
             this.DGVInventario.Name = "DGVInventario";
             this.DGVInventario.ReadOnly = true;
+            this.DGVInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVInventario.Size = new System.Drawing.Size(562, 173);
             this.DGVInventario.TabIndex = 11;
             // 
@@ -108,56 +160,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(614, 414);
             this.panel4.TabIndex = 14;
-            // 
-            // BtnExcel
-            // 
-            this.BtnExcel.BackColor = System.Drawing.Color.LimeGreen;
-            this.BtnExcel.color = System.Drawing.Color.LimeGreen;
-            this.BtnExcel.colorActive = System.Drawing.Color.PaleGreen;
-            this.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.BtnExcel.ForeColor = System.Drawing.Color.Black;
-            this.BtnExcel.Image = global::proyectoads2.Properties.Resources.icons8_ms_excel_64;
-            this.BtnExcel.ImagePosition = 20;
-            this.BtnExcel.ImageZoom = 50;
-            this.BtnExcel.LabelPosition = 41;
-            this.BtnExcel.LabelText = "Excel";
-            this.BtnExcel.Location = new System.Drawing.Point(27, 78);
-            this.BtnExcel.Margin = new System.Windows.Forms.Padding(6);
-            this.BtnExcel.Name = "BtnExcel";
-            this.BtnExcel.Size = new System.Drawing.Size(144, 135);
-            this.BtnExcel.TabIndex = 14;
-            this.BtnExcel.Click += new System.EventHandler(this.BtnExcel_Click);
-            // 
-            // BtnPdf
-            // 
-            this.BtnPdf.BackColor = System.Drawing.Color.Tomato;
-            this.BtnPdf.color = System.Drawing.Color.Tomato;
-            this.BtnPdf.colorActive = System.Drawing.Color.Coral;
-            this.BtnPdf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnPdf.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.BtnPdf.ForeColor = System.Drawing.Color.White;
-            this.BtnPdf.Image = global::proyectoads2.Properties.Resources.icons8_pdf_64;
-            this.BtnPdf.ImagePosition = 20;
-            this.BtnPdf.ImageZoom = 50;
-            this.BtnPdf.LabelPosition = 41;
-            this.BtnPdf.LabelText = "PDF";
-            this.BtnPdf.Location = new System.Drawing.Point(27, 237);
-            this.BtnPdf.Margin = new System.Windows.Forms.Padding(6);
-            this.BtnPdf.Name = "BtnPdf";
-            this.BtnPdf.Size = new System.Drawing.Size(144, 135);
-            this.BtnPdf.TabIndex = 15;
-            this.BtnPdf.Click += new System.EventHandler(this.BtnPdf_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(53, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 22);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Exportar";
             // 
             // Reportes
             // 

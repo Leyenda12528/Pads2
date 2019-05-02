@@ -32,24 +32,24 @@
             this.mostrarunif = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnEntregarI = new Bunifu.Framework.UI.BunifuImageButton();
-            this.agregar = new System.Windows.Forms.Button();
+            this.BtnEntregarI = new Bunifu.Framework.UI.BunifuImageButton();
+            this.BtnAgregar = new System.Windows.Forms.Button();
             this.estudiante = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.mostrarunif)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEntregarI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnEntregarI)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(12, 43);
+            this.label1.Location = new System.Drawing.Point(17, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 20);
+            this.label1.Size = new System.Drawing.Size(86, 40);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Estudiante";
+            this.label1.Text = "Elija un\r\nEstudiante";
             // 
             // mostrarunif
             // 
@@ -59,6 +59,7 @@
             this.mostrarunif.Location = new System.Drawing.Point(179, 27);
             this.mostrarunif.Name = "mostrarunif";
             this.mostrarunif.ReadOnly = true;
+            this.mostrarunif.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mostrarunif.Size = new System.Drawing.Size(304, 190);
             this.mostrarunif.TabIndex = 4;
             // 
@@ -74,47 +75,48 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnEntregarI);
-            this.panel2.Controls.Add(this.agregar);
+            this.panel2.Controls.Add(this.BtnEntregarI);
+            this.panel2.Controls.Add(this.BtnAgregar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(357, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(156, 44);
             this.panel2.TabIndex = 6;
             // 
-            // btnEntregarI
+            // BtnEntregarI
             // 
-            this.btnEntregarI.BackColor = System.Drawing.Color.Transparent;
-            this.btnEntregarI.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnEntregarI.ErrorImage = global::proyectoads2.Properties.Resources.icons8_cerrar_ventana_50;
-            this.btnEntregarI.Image = global::proyectoads2.Properties.Resources.icons8_más_40;
-            this.btnEntregarI.ImageActive = null;
-            this.btnEntregarI.Location = new System.Drawing.Point(0, 0);
-            this.btnEntregarI.Name = "btnEntregarI";
-            this.btnEntregarI.Size = new System.Drawing.Size(37, 44);
-            this.btnEntregarI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEntregarI.TabIndex = 17;
-            this.btnEntregarI.TabStop = false;
-            this.btnEntregarI.Zoom = 10;
+            this.BtnEntregarI.BackColor = System.Drawing.Color.Transparent;
+            this.BtnEntregarI.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnEntregarI.ErrorImage = global::proyectoads2.Properties.Resources.icons8_cerrar_ventana_50;
+            this.BtnEntregarI.Image = global::proyectoads2.Properties.Resources.icons8_más_40;
+            this.BtnEntregarI.ImageActive = null;
+            this.BtnEntregarI.Location = new System.Drawing.Point(0, 0);
+            this.BtnEntregarI.Name = "BtnEntregarI";
+            this.BtnEntregarI.Size = new System.Drawing.Size(37, 44);
+            this.BtnEntregarI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnEntregarI.TabIndex = 17;
+            this.BtnEntregarI.TabStop = false;
+            this.BtnEntregarI.Zoom = 10;
+            this.BtnEntregarI.Click += new System.EventHandler(this.BtnEntregarI_Click);
             // 
-            // agregar
+            // BtnAgregar
             // 
-            this.agregar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.agregar.Location = new System.Drawing.Point(38, 0);
-            this.agregar.Name = "agregar";
-            this.agregar.Size = new System.Drawing.Size(118, 44);
-            this.agregar.TabIndex = 6;
-            this.agregar.Text = "Agregar Paquete";
-            this.agregar.UseVisualStyleBackColor = true;
-            this.agregar.Click += new System.EventHandler(this.agregar_Click);
+            this.BtnAgregar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.BtnAgregar.Location = new System.Drawing.Point(38, 0);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(118, 44);
+            this.BtnAgregar.TabIndex = 6;
+            this.BtnAgregar.Text = "Agregar Paquete";
+            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.Agregar_Click);
             // 
             // estudiante
             // 
             this.estudiante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.estudiante.FormattingEnabled = true;
-            this.estudiante.Location = new System.Drawing.Point(12, 69);
+            this.estudiante.Location = new System.Drawing.Point(21, 118);
             this.estudiante.Name = "estudiante";
             this.estudiante.Size = new System.Drawing.Size(121, 28);
             this.estudiante.TabIndex = 11;
@@ -134,7 +136,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mostrarunif)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnEntregarI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnEntregarI)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,7 +149,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox estudiante;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button agregar;
-        private Bunifu.Framework.UI.BunifuImageButton btnEntregarI;
+        private System.Windows.Forms.Button BtnAgregar;
+        private Bunifu.Framework.UI.BunifuImageButton BtnEntregarI;
     }
 }

@@ -18,7 +18,7 @@ namespace proyectoads2
         public Entregar_uniformes()
         {
             InitializeComponent();
-            cons.listud(estudiante);
+            cons.Listud(estudiante);
             mostrardatos();
         }
         private void mostrardatos()
@@ -28,7 +28,7 @@ namespace proyectoads2
                 DataTable dt = (DataTable)dtguniformes.DataSource;
                 dt.Clear();
             }
-            cons.mostraruniforme(dtguniformes);
+            cons.Mostraruniforme(dtguniformes);
         }
 
         private void btnEntregarI_Click(object sender, EventArgs e)
@@ -37,24 +37,25 @@ namespace proyectoads2
         }
 
         private void btnEntregar_Click(object sender, EventArgs e)
-        {
-            agg = estudiante.SelectedItem.ToString();
-            if (agg.Length > 0)
+        {            
+            try
             {
-                int cantidadunif = cons.cantidadalumno(agg);
+                agg = estudiante.SelectedItem.ToString();
+                int cantidadunif = cons.Cantidadalumno(agg);
                 if (cantidadunif > 0)
                 {
                     cantidadunif--;
-                    cons.actualizaruniformes(agg, cantidadunif);
+                    cons.Actualizaruniformes(agg, cantidadunif);
                     mostrardatos();
-                    MessageBox.Show("Uniforme entregado");
+                    MessageBox.Show("Uniforme entregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                {
-                    MessageBox.Show("Este alumno no tiene uniformes que recibir");
-                }
+                    MessageBox.Show("Este alumno no tiene uniformes que recibir", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-                
+            catch (Exception)
+            {
+                MessageBox.Show("Elija un estudiante primero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
     }
 }

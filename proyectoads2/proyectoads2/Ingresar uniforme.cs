@@ -19,7 +19,7 @@ namespace proyectoads2
         {
             InitializeComponent();
             
-            cons.listud2(estudiante);
+            cons.Listud2(estudiante);
             mostrardatos();
 
         }
@@ -31,7 +31,7 @@ namespace proyectoads2
                 DataTable dt = (DataTable)mostrarunif.DataSource;
                 dt.Clear();
             }
-            cons.mostraruniforme(mostrarunif);
+            cons.Mostraruniforme(mostrarunif);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -41,30 +41,37 @@ namespace proyectoads2
             uniform.Show();
         }
 
-        private void agregar_Click(object sender, EventArgs e)
+        private void Agregar_Click(object sender, EventArgs e)
         {
-            agg = estudiante.SelectedItem.ToString();
-            if (agg.Length>0)
+            try
             {
-                if (cons.existealumno(agg))
+                agg = estudiante.SelectedItem.ToString();
+                if (cons.Existealumno(agg))
                 {
-                    int cantidadunif = cons.cantidadalumno(agg);
+                    int cantidadunif = cons.Cantidadalumno(agg);
                     if (cantidadunif < 2)
                     {
-                        cons.actualizaruniformes(agg, cantidadunif+1);
+                        cons.Actualizaruniformes(agg, cantidadunif + 1);
                         mostrardatos();
                     }
                     else
-                    {
-                        MessageBox.Show("Este alumno ya tiene el maximo de uniformes en el año");
-                    }
+                        MessageBox.Show("Este alumno ya tiene el máximo de uniformes en el año", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    cons.nuevounif(agg,1);
+                    cons.Nuevounif(agg, 1);
                     mostrardatos();
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Elija un estudiante primero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }                        
+        }
+
+        private void BtnEntregarI_Click(object sender, EventArgs e)
+        {
+            Agregar_Click(null, null);
         }
     }
 }

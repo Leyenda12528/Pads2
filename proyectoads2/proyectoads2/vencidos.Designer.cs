@@ -59,6 +59,7 @@
             this.DGVencidos.Location = new System.Drawing.Point(44, 96);
             this.DGVencidos.Name = "DGVencidos";
             this.DGVencidos.ReadOnly = true;
+            this.DGVencidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVencidos.Size = new System.Drawing.Size(436, 213);
             this.DGVencidos.TabIndex = 1;
             // 

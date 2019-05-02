@@ -58,7 +58,7 @@ namespace proyectoads2
 
         private void btnPlanMenu_Click(object sender, EventArgs e)
         {
-            mostrar(new planificacionmenu());
+            mostrar(new PlanificacionMenu());
         }
 
         private void btnVencidos_Click(object sender, EventArgs e)

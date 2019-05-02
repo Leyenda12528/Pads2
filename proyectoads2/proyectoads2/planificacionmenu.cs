@@ -11,12 +11,17 @@ using System.Windows.Forms;
 
 namespace proyectoads2
 {
-    public partial class planificacionmenu : Form
+    public partial class PlanificacionMenu : Form
     {
         private Consultas cons = new Consultas();
-        public planificacionmenu()
+        public PlanificacionMenu()
         {
             InitializeComponent();
+            cons.VerPlanificacion(panelarroz, 0);
+            cons.VerPlanificacion(panelfrijol, 1);
+            cons.VerPlanificacion(panelaceite, 2);
+            cons.VerPlanificacion(panelleche, 3);
+            cons.VerPlanificacion(panelbebida, 4);
         }
 
         private void btnGuardarI_Click(object sender, EventArgs e)
@@ -24,16 +29,13 @@ namespace proyectoads2
             btnGuardar_Click(null, null);
         }
 
-        
-        
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            cons.newplanif(panelarroz,0);
-            cons.newplanif(panelfrijol, 1);
-            cons.newplanif(panelaceite, 2);
-            cons.newplanif(panelleche, 3);
-            cons.newplanif(panelbebida, 4);
+            cons.Newplanif(panelarroz,0);
+            cons.Newplanif(panelfrijol, 1);
+            cons.Newplanif(panelaceite, 2);
+            cons.Newplanif(panelleche, 3);
+            cons.Newplanif(panelbebida, 4);
             MessageBox.Show("Planificacion alimentos actualizado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
