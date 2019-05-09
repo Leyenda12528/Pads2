@@ -32,6 +32,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>escudo-de-el-salvador.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\Downloads\Leyenda2\Bunifu_UI_v1.52.dll</HintPath>
@@ -355,6 +361,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-viernes-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="escudo-de-el-salvador.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
